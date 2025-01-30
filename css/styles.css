@@ -1,0 +1,88 @@
+body{
+    background-color: #244855;
+    color: #FBE9D0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+header{
+    float:left;
+    width: 30%;
+    margin-bottom: 4px
+}
+#title{
+    margin-top: 16px;
+    margin-left: 16px;
+    font-size:32px;
+    font-family: arial;
+    font-weight: 600;
+    color: #e64833;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+nav{
+    float:right;
+    width:60%;
+    margin-top: 16px;
+    overflow: hidden;
+    margin-bottom: 4px
+}
+nav ul{
+    float:right;
+}
+nav li{
+    list-style-type: none;
+    float: left;
+    margin-top: 8px;
+    margin-right: 16px; 
+
+    padding:4px;
+}
+nav li:hover{
+    color: #e64833;
+}
+
+#searchBox {
+    padding: 8px;
+    background: none;
+    background-color: white;
+    color: black;
+    border: 4px solid #FBE9D0;
+    border-radius: 16px;
+    font-size: 16px;
+    outline: none;
+    transition: 5ms;
+}
+#searchBox:hover{
+    border: 4px solid #e64833;
+}
+
+.genericSection{
+    width:100%;
+    float:left;
+    margin-top: 8px;
+}
+
+#platforms{
+    margin-top: 8px;
+    padding: 8px;
+    width:100%;
+    float:left;
+    background-color: #874f41;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+.platformLogo{
+    margin-left: 8px;
+    width: 64px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer{
+    margin: 5px;
+    margin-top:10px;
+    padding-left: 5px;
+    float:left;
+    width: 100%;
+    color: #90aead;
+}
