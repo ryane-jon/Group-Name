@@ -12,10 +12,11 @@ function Game(title, console,year, developer, publisher, series, availability, r
 }
 
 //Console Constructor
-function Console(title, company, availability){
+function Console(title, company, availability,id){
     this.title = title; // The title of the console
     this.company = company; // Company behind the console -- String
     this.availability = availability; // is the console that runs this game still available to buy --  String -- "Available", "Overpriced", "Partial", "Unavailable" etc
+    this.id=id;
 }
 
 //User Constructor
@@ -33,36 +34,41 @@ function ReviewScore(score, game, source) {
     source = this.source; // The source of the review -- String -- "metacritic", "IGN" etc
 }
 
-//populates consoles
-function populateConsoles(){
-
-    let consoles = [];
-
-    consoles.push(new Console("SNES","Nintendo","Unavailable"));
-    consoles.push(new Console("PS2","Sony","Unavailable"));
-    consoles.push(new Console("GameCube","Nintendo","Unavailable"));
-
-    //store it in local storage
-    for(let i = 0;i<consoles.length;i++){
-        localStorage.setItem("Console"+consoles[i].title+","+consoles[i].company+","+consoles[i].availability)
-    }
-}
 
 //Populate games
 function populateGames(){
     let games =[];
+    consoles = getConsoles();
+    games.push(new Game("Super Metroid",consoles[0].title+" "+consoles[3].title
+        ,1994,"Nintendo","Nintendo","Metroid","Available"," ",0))
 
-    games.push(new Game("Super Metroid"," ",1994,"Nintendo","Nintendo","Metroid","Available"," ",0))
-    games.push(new Game("Resident Evil 4"," ",2005,"Capcom","Capcom","Resident Evil","Available"," ",1))
+    games.push(new Game("Resident Evil 4",consoles[2].title+" "+consoles[1].title+" "+consoles[3].title
+        ,2005,"Capcom","Capcom","Resident Evil","Available"," ",1))
 
     //store it in local storage
     for(let i = 0;i<games.length;i++){
         localStorage.setItem("game"+games[i].id,games[i].title+","+games[i].console+","
             +games[i].year+","+games[i].developer+","+games[i].publisher+","
-            +games[i].series+","+games[i].availability+","+games[i].reviews+","
+            +games[i].series+","+games[i].availability+","+games.reviews+","
             +games[i].id);
     }
     
+}
+
+//populates consoles
+function populateConsoles(){
+
+    let consoles = [];
+
+    consoles.push(new Console("SNES","Nintendo","Unavailable",0));
+    consoles.push(new Console("PS2","Sony","Unavailable",1));
+    consoles.push(new Console("GameCube","Nintendo","Unavailable",2));
+    consoles.push(new Console("Nintendo Switch","Nintendo","Available",3))
+
+    //store it in local storage
+    for(let i = 0;i<consoles.length;i++){
+        localStorage.setItem("Console"+consoles[i].id,consoles[i].title+","+consoles[i].company+","+consoles[i].availability+","+consoles[i].id)
+    }
 }
 
 //get games
@@ -79,13 +85,28 @@ function getGames(){
     return games
 }
 
+//get Consoles
+function getConsoles(){
+    let consoles =[];
+    let console=localStorage.getItem("Console"+"0");
+    while(console!= null){
+        var consoleValues = console.split(",");
+        consoles.push(new Console(consoleValues[0],consoleValues[1],consoleValues[2],consoleValues[3]));
+
+        console=localStorage.getItem("Console"+parseInt(parseInt(consoleValues[3])+1));
+    }
+    return consoles
+}
+
+
 function viewGame(gameID){
     localStorage.setItem("SelectedGame",gameID)
     window.location.href = "game.html"
 }
 
 function addGame(){
-    game=getGames()[localStorage.getItem("SelectedGame")]
+    game=getGames()[localStorage.getItem("SelectedGame")];
+
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
     document.getElementById("gameContent").innerHTML += "<h5>"+game.console+"</h5>";
     document.getElementById("gameContent").innerHTML += "<h5>"+game.year+"</h5>";
