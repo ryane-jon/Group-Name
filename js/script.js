@@ -38,23 +38,23 @@ function ReviewScore(score, game, source) {
 //populates gameConsoles (also used to get and return in place of would-be database)
 function populateGameConsoles(){
     let gameConsoles = [];
-    gameConsoles.push(new GameConsole("SNES","Unavailable",gameConsoles.length));
-    gameConsoles.push(new GameConsole("PS2","Unavailable",gameConsoles.length));
-    gameConsoles.push(new GameConsole("GameCube","Unavailable",gameConsoles.length));
-    gameConsoles.push(new GameConsole("Nintendo Switch","Available",gameConsoles.length))
-    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("Xbox One","Available",gameConsoles.length))
-    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("Xbox Series X","Available",gameConsoles.length))
-    gameConsoles.push(new GameConsole("PS5","Available",gameConsoles.length))
-    gameConsoles.push(new GameConsole("PS4","Available",gameConsoles.length))
-    gameConsoles.push(new GameConsole("PS3","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("SNES Classic","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("NES ","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("NES Classic","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("Nintendo 3DS","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("New Nintendo 3DS","Unavailable",gameConsoles.length))
-    gameConsoles.push(new GameConsole("Wii U","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("SNES","Unavailable",gameConsoles.length)); //0
+    gameConsoles.push(new GameConsole("PS2","Unavailable",gameConsoles.length)); //1
+    gameConsoles.push(new GameConsole("GameCube","Unavailable",gameConsoles.length)); //2
+    gameConsoles.push(new GameConsole("Nintendo Switch","Available",gameConsoles.length)) //3
+    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",gameConsoles.length)) //4
+    gameConsoles.push(new GameConsole("Xbox One","Available",gameConsoles.length)) //5
+    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",gameConsoles.length)) //6
+    gameConsoles.push(new GameConsole("Xbox Series X","Available",gameConsoles.length)) //7
+    gameConsoles.push(new GameConsole("PS5","Available",gameConsoles.length)) //8
+    gameConsoles.push(new GameConsole("PS4","Available",gameConsoles.length)) //9
+    gameConsoles.push(new GameConsole("PS3","Unavailable",gameConsoles.length)) //10
+    gameConsoles.push(new GameConsole("SNES Classic","Unavailable",gameConsoles.length)) //11
+    gameConsoles.push(new GameConsole("NES ","Unavailable",gameConsoles.length)) //12
+    gameConsoles.push(new GameConsole("NES Classic","Unavailable",gameConsoles.length)) //13
+    gameConsoles.push(new GameConsole("Nintendo 3DS","Unavailable",gameConsoles.length)) //14
+    gameConsoles.push(new GameConsole("New Nintendo 3DS","Unavailable",gameConsoles.length)) //15
+    gameConsoles.push(new GameConsole("Wii U","Unavailable",gameConsoles.length)) //16
     return gameConsoles;
 }
 
@@ -71,13 +71,13 @@ function populateGames(){
 
     games.push(new Game("Super Mario Galaxy", [gameConsoles[4],gameConsoles[3]], ["Adventure"]
         ,2007,"Nintendo","Nintendo","Mario","Available"," ",games.length))
-    games.push(new Game("Grand Theft Auto 5", [gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action"]
+    games.push(new Game("Grand Theft Auto 5", [gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action"]
         ,2013,"Rockstar","Rockstar","Grand Theft Auto","Available"," ",games.length))
-    games.push(new Game("Rainbow Six Siege", [gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action Shooter"]
+    games.push(new Game("Rainbow Six Siege", [gameConsoles[5],gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action Shooter"]
         ,2015,"Ubisoft","Ubisoft","Tom Clancy","Available"," ",games.length))
-    games.push(new Game("Super Mario Odyssey", [gameConsoles[4]], ["Adventure"]
+    games.push(new Game("Super Mario Odyssey", [gameConsoles[3]], ["Adventure"]
         ,2017,"Nintendo","Nintendo","Mario","Available"," ",games.length)) 
-    games.push(new Game("Elden Ring", [gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action Roleplay"]
+    games.push(new Game("Elden Ring", [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[7]], ["Action Roleplay"]
         ,2017,"FromSoftware","FromSoftware","","Available"," ",games.length))   
     console.log(games[0]);
 
