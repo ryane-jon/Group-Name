@@ -38,17 +38,17 @@ function ReviewScore(score, game, source) {
 //populates gameConsoles (also used to get and return in place of would-be database)
 function populateGameConsoles(){
     let gameConsoles = [];
-    gameConsoles.push(new GameConsole("SNES","Unavailable",gamesConsoles.length));
-    gameConsoles.push(new GameConsole("PS2","Unavailable",gamesConsoles.length));
-    gameConsoles.push(new GameConsole("GameCube","Unavailable",gamesConsoles.length));
-    gameConsoles.push(new GameConsole("Nintendo Switch","Available",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("Xbox One","Available",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("Xbox Series X","Available",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("PS5","Available",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("PS4","Available",gamesConsoles.length))
-    gameConsoles.push(new GameConsole("PS3","Unavailable",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("SNES","Unavailable",gameConsoles.length));
+    gameConsoles.push(new GameConsole("PS2","Unavailable",gameConsoles.length));
+    gameConsoles.push(new GameConsole("GameCube","Unavailable",gameConsoles.length));
+    gameConsoles.push(new GameConsole("Nintendo Switch","Available",gameConsoles.length))
+    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("Xbox One","Available",gameConsoles.length))
+    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("Xbox Series X","Available",gameConsoles.length))
+    gameConsoles.push(new GameConsole("PS5","Available",gameConsoles.length))
+    gameConsoles.push(new GameConsole("PS4","Available",gameConsoles.length))
+    gameConsoles.push(new GameConsole("PS3","Unavailable",gameConsoles.length))
     return gameConsoles;
 }
 
