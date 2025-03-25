@@ -57,6 +57,7 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("Wii U","Unavailable",gameConsoles.length)) //16
     gameConsoles.push(new GameConsole("PS vita","Unavailable",gameConsoles.length)) //17
     gameConsoles.push(new GameConsole("PC","Available",gameConsoles.length))//18
+    gameConsoles.push(new GameConsole("Game Boy Advance","Unavailable",gameConsoles.length))//19
     return gameConsoles;
 }
 
@@ -64,20 +65,20 @@ function populateGameConsoles(){
 function populateGames(){
     let games =[];
     gameConsoles = populateGameConsoles();
-    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3],gameConsoles[4],gameConsoles[11],gameConsoles[15],gameConsoles[16]], ["metroidVania"]
+    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3],gameConsoles[4],gameConsoles[11],gameConsoles[15],gameConsoles[16]], ["Metroidvania"]
         ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
-    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1],gameConsoles[3],gameConsoles[4],gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["action horror"]
+    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1],gameConsoles[3],gameConsoles[4],gameConsoles[16],gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["action horror"]
         ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
 
     // Kieran's Games
 
-    games.push(new Game("Super Mario Galaxy", [gameConsoles[4],gameConsoles[3]], ["Adventure"]
+    games.push(new Game("Super Mario Galaxy", [gameConsoles[4],gameConsoles[3]], ["Adventure","3D Platformer"]
         ,2007,"Nintendo","Nintendo","Mario","Available"," ",games.length))
     games.push(new Game("Grand Theft Auto 5", [gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["Action"]
         ,2013,"Rockstar","Rockstar","Grand Theft Auto","Available"," ",games.length))
     games.push(new Game("Rainbow Six Siege", [gameConsoles[5],gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["Action Shooter"]
         ,2015,"Ubisoft","Ubisoft","Tom Clancy","Available"," ",games.length))
-    games.push(new Game("Super Mario Odyssey", [gameConsoles[3]], ["Adventure"]
+    games.push(new Game("Super Mario Odyssey", [gameConsoles[3]], ["Adventure",,"3D Platformer"]
         ,2017,"Nintendo","Nintendo","Mario","Available"," ",games.length)) 
     games.push(new Game("Elden Ring", [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[7],gameConsoles[18]], ["Action Roleplay"]
         ,2017,"FromSoftware","FromSoftware","","Available"," ",games.length)) 
@@ -86,6 +87,8 @@ function populateGames(){
 
     games.push(new Game("Metal Gear Solid 3:Snake Eater",[gameConsoles[1],gameConsoles[6],gameConsoles[10],gameConsoles[17],gameConsoles[5],gameConsoles[14],gameConsoles[15],gameConsoles[9],gameConsoles[8],gameConsoles[7],gameConsoles[3],gameConsoles[18]],['Stealth Action'],2004,'Konami','konami','Metal Gear','Available',"",games.length));
     console.log(games[0]);
+    games.push(new Game("The Legend of Zelda",[gameConsoles[12],gameConsoles[13],gameConsoles[2],gameConsoles[19],gameConsoles[4],gameConsoles[16],gameConsoles[14],gameConsoles[15],gameConsoles[3]],["Adventure"],1986,'Nintendo','Nintendo','Zelda','Available'," ",games.length))
+
 
 
     
