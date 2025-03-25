@@ -131,3 +131,11 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<p>"+game.reviews+"</p>";
 
 }
+
+function displayAllGames(){
+    games = populateGames()
+    for(i=0; i<games.length; i++){
+        game = games[i]
+        document.getElementById("allgamesDescription").innerHTML += "<p>"+game.title+"</p>";
+    }
+}
