@@ -100,7 +100,17 @@ function populateGames(){
 //get games
 function getGame(id){
     games = populateGames();
-            return games[id];
+    //try to find game from id
+    console.log("Finding game with id: "+id);
+    for(i=0; i<games.length; i++){
+        console.log(games[i].id);
+        if(games[i].id==id) return games[i];
+    }
+    //if return not reached, try to find game from name
+    console.log("Failed, trying name instead");
+    for(i=0; i<games.length; i++){
+        if(games[i].title==id) return games[i];
+    }
 }
 
 
@@ -122,7 +132,7 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<h5>"
  document.getElementById("gameContent").innerHTML += "Genre: ";
     for (i=0; i<game.genre.length; i++){
-        document.getElementById("gameContent").innerHTML += "<h5>"+game.genre+" ";
+        document.getElementById("gameContent").innerHTML += "<h5>"+game.genre[i]+" ";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
 
