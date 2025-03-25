@@ -38,17 +38,17 @@ function ReviewScore(score, game, source) {
 //populates gameConsoles (also used to get and return in place of would-be database)
 function populateGameConsoles(){
     let gameConsoles = [];
-    gameConsoles.push(new GameConsole("SNES","Unavailable",0));
-    gameConsoles.push(new GameConsole("PS2","Unavailable",1));
-    gameConsoles.push(new GameConsole("GameCube","Unavailable",2));
-    gameConsoles.push(new GameConsole("Nintendo Switch","Available",3))
-    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",4))
-    gameConsoles.push(new GameConsole("Xbox One","Available",5))
-    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",6))
-    gameConsoles.push(new GameConsole("Xbox Series X","Available",7))
-    gameConsoles.push(new GameConsole("PS5","Available",8))
-    gameConsoles.push(new GameConsole("PS4","Available",9))
-    gameConsoles.push(new GameConsole("PS3","Unavailable",10))
+    gameConsoles.push(new GameConsole("SNES","Unavailable",gamesConsoles.length));
+    gameConsoles.push(new GameConsole("PS2","Unavailable",gamesConsoles.length));
+    gameConsoles.push(new GameConsole("GameCube","Unavailable",gamesConsoles.length));
+    gameConsoles.push(new GameConsole("Nintendo Switch","Available",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("Xbox One","Available",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("Xbox Series X","Available",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("PS5","Available",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("PS4","Available",gamesConsoles.length))
+    gameConsoles.push(new GameConsole("PS3","Unavailable",gamesConsoles.length))
     return gameConsoles;
 }
 
