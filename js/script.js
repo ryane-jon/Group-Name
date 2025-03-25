@@ -60,7 +60,23 @@ function populateGames(){
         ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
     games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]], ["action horror"]
         ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
+
+    // Kieran's Games
+
+    games.push(new Game("Super Mario Galaxy", [gameConsoles[4],gameConsoles[3]], ["Adventure"]
+        ,2007,"Nintendo","Nintendo","Mario","Available"," ",games.length))
+    games.push(new Game("Grand Theft Auto 5", [gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action"]
+        ,2013,"Rockstar","Rockstar","Grand Theft Auto","Available"," ",games.length))
+    games.push(new Game("Rainbow Six Siege", [gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action Shooter"]
+        ,2015,"Ubisoft","Ubisoft","Tom Clancy","Available"," ",games.length))
+    games.push(new Game("Super Mario Odyssey", [gameConsoles[4]], ["Adventure"]
+        ,2017,"Nintendo","Nintendo","Mario","Available"," ",games.length)) 
+    games.push(new Game("Elden Ring", [gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["Action Roleplay"]
+        ,2017,"FromSoftware","FromSoftware","","Available"," ",games.length))   
     console.log(games[0]);
+
+
+    
     return games;
 }
 
