@@ -49,6 +49,12 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("PS5","Available",gameConsoles.length))
     gameConsoles.push(new GameConsole("PS4","Available",gameConsoles.length))
     gameConsoles.push(new GameConsole("PS3","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("SNES Classic","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("NES ","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("NES Classic","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("Nintendo 3DS","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("New Nintendo 3DS","Unavailable",gameConsoles.length))
+    gameConsoles.push(new GameConsole("Wii U","Unavailable",gameConsoles.length))
     return gameConsoles;
 }
 
@@ -56,9 +62,9 @@ function populateGameConsoles(){
 function populateGames(){
     let games =[];
     gameConsoles = populateGameConsoles();
-    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]], ["metroid like"]
+    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3],gameConsoles[4],gameConsoles[11],gameConsoles[15],gameConsoles[16]], ["metroidVania"]
         ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
-    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]], ["action horror"]
+    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1],gameConsoles[3],gameConsoles[4],gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10]], ["action horror"]
         ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
 
     // Kieran's Games
@@ -102,7 +108,7 @@ function addGame(){
 
     document.getElementById("gameContent").innerHTML += "<h5>"
     for (i=0; i<game.gameConsole.length; i++){
-            document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" ";
+            document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" , ";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
  document.getElementById("gameContent").innerHTML += "Genre: ";
