@@ -78,7 +78,7 @@ function populateGames(){
         ,2013,"Rockstar","Rockstar","Grand Theft Auto","Available"," ",games.length))
     games.push(new Game("Rainbow Six Siege", [gameConsoles[5],gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["Action Shooter"]
         ,2015,"Ubisoft","Ubisoft","Tom Clancy","Available"," ",games.length))
-    games.push(new Game("Super Mario Odyssey", [gameConsoles[3]], ["Adventure",,"3D Platformer"]
+    games.push(new Game("Super Mario Odyssey", [gameConsoles[3]], ["Adventure","3D Platformer"]
         ,2017,"Nintendo","Nintendo","Mario","Available"," ",games.length)) 
     games.push(new Game("Elden Ring", [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[7],gameConsoles[18]], ["Action Roleplay"]
         ,2017,"FromSoftware","FromSoftware","","Available"," ",games.length)) 
