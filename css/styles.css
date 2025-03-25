@@ -85,3 +85,12 @@ footer{
     width: 100%;
     color: #90aead;
 }
+
+/* All Games Page */
+
+#allgames{
+    width:200px;
+    padding:20px;
+    vertical-align: top;
+
+}
