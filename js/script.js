@@ -42,6 +42,13 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("PS2","Unavailable",1));
     gameConsoles.push(new GameConsole("GameCube","Unavailable",2));
     gameConsoles.push(new GameConsole("Nintendo Switch","Available",3))
+    gameConsoles.push(new GameConsole("Nintendo Wii","Unavailable",4))
+    gameConsoles.push(new GameConsole("Xbox One","Available",5))
+    gameConsoles.push(new GameConsole("Xbox 360","Unavailable",6))
+    gameConsoles.push(new GameConsole("Xbox Series X","Available",7))
+    gameConsoles.push(new GameConsole("PS5","Available",8))
+    gameConsoles.push(new GameConsole("PS4","Available",9))
+    gameConsoles.push(new GameConsole("PS3","Unavailable",10))
     return gameConsoles;
 }
 
@@ -49,9 +56,15 @@ function populateGameConsoles(){
 function populateGames(){
     let games =[];
     gameConsoles = populateGameConsoles();
-    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]], "metroid like"
+    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]]
         ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
-    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]], "action horror"
+    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]]
+        ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
+
+    // Kieran's Games
+    games.push(new Game("Super Mario Galaxy",[gameConsoles[3],gameConsoles[4]]
+        ,2007,"Nintendo","Nintendo","Super Mario Galaxy","Available"," ",games.length))
+    games.push(new Game("Grand Theft Auto 5",[gameConsoles[3],gameConsoles[4]]
         ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
     console.log(games[0]);
     return games;
@@ -76,18 +89,18 @@ function addGame(){
 
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
 
-    document.getElementById("gameContent").innerHTML += "Consoles: <h5>"
+    document.getElementById("gameContent").innerHTML += "<h5>"
     for (i=0; i<game.gameConsole.length; i++){
             document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" ";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
 
 
-    document.getElementById("gameContent").innerHTML += "Released in <h5>"+game.year+"</h5>";
-    document.getElementById("gameContent").innerHTML += "<h6>Developed by "+game.developer+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>Published by "+game.publisher+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>A part of "+game.series+" series</h6>";
+    document.getElementById("gameContent").innerHTML += "<h5>"+game.year+"</h5>";
+    document.getElementById("gameContent").innerHTML += "<h6>"+game.developer+"</h6>";
+    document.getElementById("gameContent").innerHTML += "<h6>"+game.publisher+"</h6>";
+    document.getElementById("gameContent").innerHTML += "<h6>"+game.series+"</h6>";
     document.getElementById("gameContent").innerHTML += "<p>"+game.availability+"</p>";
-    document.getElementById("gameContent").innerHTML += "<p>Reviews: "+game.reviews+"</p>";
+    document.getElementById("gameContent").innerHTML += "<p>"+game.reviews+"</p>";
 
 }
