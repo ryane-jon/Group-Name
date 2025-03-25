@@ -49,9 +49,9 @@ function populateGameConsoles(){
 function populateGames(){
     let games =[];
     gameConsoles = populateGameConsoles();
-    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]]
+    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]], "metroid like"
         ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
-    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]]
+    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]], "action horror"
         ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
     console.log(games[0]);
     return games;
