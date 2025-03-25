@@ -132,7 +132,7 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<h5>"
  document.getElementById("gameContent").innerHTML += "Genre: ";
     for (i=0; i<game.genre.length; i++){
-        document.getElementById("gameContent").innerHTML += "<h5>"+game[i].genre+" ";
+        document.getElementById("gameContent").innerHTML += "<h5>"+game.genre[i]+" ";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
 
