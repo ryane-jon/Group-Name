@@ -35,7 +35,7 @@ function ReviewScore(score, game, source) {
     source = this.source; // The source of the review -- String -- "metacritic", "IGN" etc
 }
 
-//populates gameConsoles
+//populates gameConsoles (also used to get and return in place of would-be database)
 function populateGameConsoles(){
     let gameConsoles = [];
     gameConsoles.push(new GameConsole("SNES","Unavailable",0));
@@ -52,19 +52,13 @@ function populateGameConsoles(){
     return gameConsoles;
 }
 
-//Populate games
+//Populate games (also used to get and return in place of would-be database)
 function populateGames(){
     let games =[];
     gameConsoles = populateGameConsoles();
-    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]]
+    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3]], ["metroid like"]
         ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
-    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]]
-        ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
-
-    // Kieran's Games
-    games.push(new Game("Super Mario Galaxy",[gameConsoles[3],gameConsoles[4]]
-        ,2007,"Nintendo","Nintendo","Super Mario Galaxy","Available"," ",games.length))
-    games.push(new Game("Grand Theft Auto 5",[gameConsoles[3],gameConsoles[4]]
+    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1]], ["action horror"]
         ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
     console.log(games[0]);
     return games;
@@ -87,6 +81,7 @@ function viewGame(gameID){
 function addGame(){
     game=getGame([localStorage.getItem("SelectedGame")]);
 
+    //display game info
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
 
     document.getElementById("gameContent").innerHTML += "<h5>"
@@ -94,12 +89,16 @@ function addGame(){
             document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" ";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
+ document.getElementById("gameContent").innerHTML += "Genre: ";
+    for (i=0; i<game.genre.length; i++){
+        document.getElementById("gameContent").innerHTML += "<h5>"+game.genre+" ";
+    }
+    document.getElementById("gameContent").innerHTML += "<h5>"
 
-
-    document.getElementById("gameContent").innerHTML += "<h5>"+game.year+"</h5>";
-    document.getElementById("gameContent").innerHTML += "<h6>"+game.developer+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>"+game.publisher+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>"+game.series+"</h6>";
+    document.getElementById("gameContent").innerHTML += "Released in <h5>"+game.year+"</h5>";
+    document.getElementById("gameContent").innerHTML += "<h6>Developed by "+game.developer+"</h6>";
+    document.getElementById("gameContent").innerHTML += "<h6>Published by "+game.publisher+"</h6>";
+    document.getElementById("gameContent").innerHTML += "<h6>A part of "+game.series+" series</h6>";
     document.getElementById("gameContent").innerHTML += "<p>"+game.availability+"</p>";
     document.getElementById("gameContent").innerHTML += "<p>"+game.reviews+"</p>";
 
