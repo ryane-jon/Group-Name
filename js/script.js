@@ -50,7 +50,7 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("PS4","Available",gameConsoles.length)) //9
     gameConsoles.push(new GameConsole("PS3","Unavailable",gameConsoles.length)) //10
     gameConsoles.push(new GameConsole("SNES Classic","Unavailable",gameConsoles.length)) //11
-    gameConsoles.push(new GameConsole("NES ","Unavailable",gameConsoles.length)) //12
+    gameConsoles.push(new GameConsole("NES","Unavailable",gameConsoles.length)) //12
     gameConsoles.push(new GameConsole("NES Classic","Unavailable",gameConsoles.length)) //13
     gameConsoles.push(new GameConsole("Nintendo 3DS","Unavailable",gameConsoles.length)) //14
     gameConsoles.push(new GameConsole("New Nintendo 3DS","Unavailable",gameConsoles.length)) //15
