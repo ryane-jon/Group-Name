@@ -76,18 +76,18 @@ function addGame(){
 
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
 
-    document.getElementById("gameContent").innerHTML += "<h5>"
+    document.getElementById("gameContent").innerHTML += "Consoles: <h5>"
     for (i=0; i<game.gameConsole.length; i++){
             document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" ";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
 
 
-    document.getElementById("gameContent").innerHTML += "<h5>"+game.year+"</h5>";
-    document.getElementById("gameContent").innerHTML += "<h6>"+game.developer+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>"+game.publisher+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>"+game.series+"</h6>";
+    document.getElementById("gameContent").innerHTML += "Released in <h5>"+game.year+"</h5>";
+    document.getElementById("gameContent").innerHTML += "<h6>Developed by "+game.developer+"</h6>";
+    document.getElementById("gameContent").innerHTML += "<h6>Published by "+game.publisher+"</h6>";
+    document.getElementById("gameContent").innerHTML += "<h6>A part of "+game.series+" series</h6>";
     document.getElementById("gameContent").innerHTML += "<p>"+game.availability+"</p>";
-    document.getElementById("gameContent").innerHTML += "<p>"+game.reviews+"</p>";
+    document.getElementById("gameContent").innerHTML += "<p>Reviews: "+game.reviews+"</p>";
 
 }
