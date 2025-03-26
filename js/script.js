@@ -144,3 +144,10 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<p>"+game.reviews+"</p>";
 
 }
+
+function displayPlatforms(){
+    consoles = populateGameConsoles();
+    for (i = 0; i<consoles.length; i++){
+        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' class='platformLogo'>";
+    }
+}
