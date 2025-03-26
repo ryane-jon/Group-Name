@@ -58,6 +58,8 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("PS vita","Unavailable",gameConsoles.length)) //17
     gameConsoles.push(new GameConsole("PC","Available",gameConsoles.length))//18
     gameConsoles.push(new GameConsole("Game Boy Advance","Unavailable",gameConsoles.length))//19
+    gameConsoles.push(new GameConsole("Nintendo DS","Unavailable",gameConsoles.length))//20
+    gameConsoles.push(new GameConsole("Nintendo DSi","Unavailable",gameConsoles.length))//21
     return gameConsoles;
 }
 
@@ -88,7 +90,8 @@ function populateGames(){
     games.push(new Game("Metal Gear Solid 3:Snake Eater",[gameConsoles[1],gameConsoles[6],gameConsoles[10],gameConsoles[17],gameConsoles[5],gameConsoles[14],gameConsoles[15],gameConsoles[9],gameConsoles[8],gameConsoles[7],gameConsoles[3],gameConsoles[18]],['Stealth Action'],2004,'Konami','konami','Metal Gear','Available',"",games.length));
     console.log(games[0]);
     games.push(new Game("The Legend of Zelda",[gameConsoles[12],gameConsoles[13],gameConsoles[2],gameConsoles[19],gameConsoles[4],gameConsoles[16],gameConsoles[14],gameConsoles[15],gameConsoles[3]],["Adventure"],1986,'Nintendo','Nintendo','Zelda','Available'," ",games.length))
-
+    games.push(new Game("Mario Kart DS",[gameConsoles[20],gameConsoles[21],gameConsoles[16]],["Racing"],2005,"Nintendo","Nintedo","Mario Kart",'UnAvailable'," ",games.length))
+    
 
 
     
@@ -149,5 +152,12 @@ function displayPlatforms(){
     consoles = populateGameConsoles();
     for (i = 0; i<consoles.length; i++){
         document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' class='platformLogo'>";
+    }
+}
+        function displayAllGames(){
+    games = populateGames()
+    for(i=0; i<games.length; i++){
+        game = games[i]
+        document.getElementById("allgamesDescription").innerHTML += "<p>"+game.title+"</p>";
     }
 }
