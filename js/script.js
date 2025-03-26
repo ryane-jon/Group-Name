@@ -132,7 +132,7 @@ function populateGames(){
 //  jacks Games
 
     games.push(new Game(
-        "Metal Gear Solid 3:Snake Eater",
+        "Metal Gear Solid 3: Snake Eater",
         [gameConsoles[1],gameConsoles[6],gameConsoles[10],gameConsoles[17],gameConsoles[5],gameConsoles[14],gameConsoles[15],gameConsoles[9],gameConsoles[8],gameConsoles[7],gameConsoles[3],gameConsoles[18]],
         ['Stealth Action'],
         2004,
@@ -210,9 +210,13 @@ function getGame(id){
     //if return not reached, try to find game from name
     console.log("Failed, trying name instead");
     for(i=0; i<games.length; i++){
-        if(games[i].title==id) return games[i];
+        if(games[i].title.toLowerCase().includes(id.toString().toLowerCase())) return games[i];
+
     }
+    //if return still not reached just get id 0
+    return getGame(0);
 }
+
 
 
 function viewGame(gameID){
