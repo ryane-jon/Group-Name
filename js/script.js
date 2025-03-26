@@ -55,7 +55,7 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("Nintendo 3DS","Unavailable",gameConsoles.length)) //14
     gameConsoles.push(new GameConsole("New Nintendo 3DS","Unavailable",gameConsoles.length)) //15
     gameConsoles.push(new GameConsole("Wii U","Unavailable",gameConsoles.length)) //16
-    gameConsoles.push(new GameConsole("PS vita","Unavailable",gameConsoles.length)) //17
+    gameConsoles.push(new GameConsole("PS Vita","Unavailable",gameConsoles.length)) //17
     gameConsoles.push(new GameConsole("PC","Available",gameConsoles.length))//18
     gameConsoles.push(new GameConsole("Game Boy Advance","Unavailable",gameConsoles.length))//19
     gameConsoles.push(new GameConsole("Nintendo DS","Unavailable",gameConsoles.length))//20
@@ -129,8 +129,9 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
 
     document.getElementById("gameContent").innerHTML += "<h5>"
+    document.getElementById("gameContent").innerHTML += game.gameConsole[0].title;
     for (i=0; i<game.gameConsole.length; i++){
-            document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+", ";
+            document.getElementById("gameContent").innerHTML += ", "+game.gameConsole[i].title;
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
  document.getElementById("gameContent").innerHTML += "Genre: ";

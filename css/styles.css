@@ -72,6 +72,7 @@ nav li:hover{
 }
 .platformLogo{
     margin-left: 8px;
+    margin-bottom: 8px;
     width: 64px;
     border-radius: 4px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
