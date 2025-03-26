@@ -29,9 +29,8 @@ function User(username, password, email, subsctiption, id) {
 }
 
 //Review Constructor
-function ReviewScore(score, game, source) {
+function ReviewScore(score, source) {
     score = this.score; // int
-    game = this.game; // the game the review is for -- String
     source = this.source; // The source of the review -- String -- "metacritic", "IGN" etc
 }
 
@@ -67,34 +66,133 @@ function populateGameConsoles(){
 function populateGames(){
     let games =[];
     gameConsoles = populateGameConsoles();
-    games.push(new Game("Super Metroid", [gameConsoles[0],gameConsoles[3],gameConsoles[4],gameConsoles[11],gameConsoles[15],gameConsoles[16]], ["Metroidvania"]
-        ,1994,"Nintendo","Nintendo","Metroid","Available"," ",games.length))
-    games.push(new Game("Resident Evil 4",[gameConsoles[2],gameConsoles[1],gameConsoles[3],gameConsoles[4],gameConsoles[16],gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["action horror"]
-        ,2005,"Capcom","Capcom","Resident Evil","Available"," ",games.length))
 
-    // Kieran's Games
+//  Kieran's Games
 
-    games.push(new Game("Super Mario Galaxy", [gameConsoles[4],gameConsoles[3]], ["Adventure","3D Platformer"]
-        ,2007,"Nintendo","Nintendo","Mario","Available"," ",games.length))
-    games.push(new Game("Grand Theft Auto 5", [gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["Action"]
-        ,2013,"Rockstar","Rockstar","Grand Theft Auto","Available"," ",games.length))
-    games.push(new Game("Rainbow Six Siege", [gameConsoles[5],gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], ["Action Shooter"]
-        ,2015,"Ubisoft","Ubisoft","Tom Clancy","Available"," ",games.length))
-    games.push(new Game("Super Mario Odyssey", [gameConsoles[3]], ["Adventure","3D Platformer"]
-        ,2017,"Nintendo","Nintendo","Mario","Available"," ",games.length)) 
-    games.push(new Game("Elden Ring", [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[7],gameConsoles[18]], ["Action Roleplay"]
-        ,2017,"FromSoftware","FromSoftware","","Available"," ",games.length)) 
+    games.push(new Game(
+        "Super Mario Galaxy", 
+        [gameConsoles[4],gameConsoles[3]], 
+        ["Adventure","3D Platformer"],
+        2007,
+        "Nintendo",
+        "Nintendo",
+        "Mario",
+        "Available",
+        [new ReviewScore(97, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Grand Theft Auto 5", 
+        [gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
+        ["Action"],
+        2013,
+        "Rockstar","Rockstar",
+        "Grand Theft Auto",
+        "Available",
+        [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(85, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Rainbow Six Siege",
+        [gameConsoles[5],gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
+        ["Action Shooter"],
+        2015,
+        "Ubisoft",
+        "Ubisoft",
+        "Tom Clancy",
+        "Available",
+        [new ReviewScore(85, "IGN"), new ReviewScore(73, "Metacritic"), new ReviewScore(71, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Super Mario Odyssey", 
+        [gameConsoles[3]], 
+        ["Adventure","3D Platformer"],
+        2017,
+        "Nintendo",
+        "Nintendo",
+        "Mario",
+        "Available",
+        [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(89, "Metacritic Users")],
+        games.length
+    )) 
+    games.push(new Game(
+        "Elden Ring",
+        [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[7],gameConsoles[18]], 
+        ["Action Roleplay"],
+        2017,
+        "FromSoftware",
+        "FromSoftware",
+        "Dark Souls",
+        "Available",
+        [new ReviewScore(100, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(82, "Metacritic Users")],
+        games.length
+    )) 
     
-    // jacks Games
+//  jacks Games
 
-    games.push(new Game("Metal Gear Solid 3:Snake Eater",[gameConsoles[1],gameConsoles[6],gameConsoles[10],gameConsoles[17],gameConsoles[5],gameConsoles[14],gameConsoles[15],gameConsoles[9],gameConsoles[8],gameConsoles[7],gameConsoles[3],gameConsoles[18]],['Stealth Action'],2004,'Konami','konami','Metal Gear','Available',"",games.length));
-    console.log(games[0]);
-    games.push(new Game("The Legend of Zelda",[gameConsoles[12],gameConsoles[13],gameConsoles[2],gameConsoles[19],gameConsoles[4],gameConsoles[16],gameConsoles[14],gameConsoles[15],gameConsoles[3]],["Adventure"],1986,'Nintendo','Nintendo','Zelda','Available'," ",games.length))
-    games.push(new Game("Mario Kart DS",[gameConsoles[20],gameConsoles[21],gameConsoles[16]],["Racing"],2005,"Nintendo","Nintedo","Mario Kart",'UnAvailable'," ",games.length))
-    
-
-
-    
+    games.push(new Game(
+        "Metal Gear Solid 3:Snake Eater",
+        [gameConsoles[1],gameConsoles[6],gameConsoles[10],gameConsoles[17],gameConsoles[5],gameConsoles[14],gameConsoles[15],gameConsoles[9],gameConsoles[8],gameConsoles[7],gameConsoles[3],gameConsoles[18]],
+        ['Stealth Action'],
+        2004,
+        'Konami',
+        'konami',
+        'Metal Gear',
+        'Available',
+        [new ReviewScore(96, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(84, "Metacritic Users")],
+        games.length
+    ));
+    games.push(new Game(
+        "The Legend of Zelda",
+        [gameConsoles[12],gameConsoles[13],gameConsoles[2],gameConsoles[19],gameConsoles[4],gameConsoles[16],gameConsoles[14],gameConsoles[15],gameConsoles[3]],
+        ["Adventure"],
+        1986,
+        'Nintendo',
+        'Nintendo',
+        'Zelda',
+        'Available',
+        [new ReviewScore(100, "IGN"), new ReviewScore(84, "Metacritic"), new ReviewScore(80, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Mario Kart DS",
+        [gameConsoles[20],
+        gameConsoles[21],
+        gameConsoles[16]],
+        ["Racing"],
+        2005,
+        "Nintendo",
+        "Nintedo",
+        "Mario Kart",
+        'Unavailable',
+        [new ReviewScore(95, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Super Metroid", 
+        [gameConsoles[0],gameConsoles[3],gameConsoles[4],gameConsoles[11],gameConsoles[15],gameConsoles[16]], 
+        ["Metroidvania"],
+        1994,
+        "Nintendo",
+        "Nintendo",
+        "Metroid",
+        "Available",
+        [new ReviewScore(95, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(90, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Resident Evil 4",
+        [gameConsoles[2],gameConsoles[1],gameConsoles[3],gameConsoles[4],gameConsoles[16],gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
+        ["action horror"],
+        2005,
+        "Capcom",
+        "Capcom",
+        "Resident Evil",
+        "Available",
+        [new ReviewScore(98, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
+        games.length
+    ))
     return games;
 }
 
