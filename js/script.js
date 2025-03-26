@@ -30,8 +30,8 @@ function User(username, password, email, subsctiption, id) {
 
 //Review Constructor
 function ReviewScore(score, source) {
-    score = this.score; // int
-    source = this.source; // The source of the review -- String -- "metacritic", "IGN" etc
+    this.score = score; // int
+    this.source = source; // The source of the review -- String -- "metacritic", "IGN" etc
 }
 
 //populates gameConsoles (also used to get and return in place of would-be database)
@@ -243,7 +243,10 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<h6>Published by "+game.publisher+"</h6>";
     document.getElementById("gameContent").innerHTML += "<h6>A part of "+game.series+" series</h6>";
     document.getElementById("gameContent").innerHTML += "<p>"+game.availability+"</p>";
-    document.getElementById("gameContent").innerHTML += "<p>"+game.reviews+"</p>";
+    for (i=0; i<game.reviews.length;i++){
+
+        document.getElementById("gameContent").innerHTML += "<p>"+game.reviews[i].score+" from "+game.reviews[i].source+"</p>";
+    }
 
 }
 
