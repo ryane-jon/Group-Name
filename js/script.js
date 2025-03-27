@@ -178,7 +178,7 @@ function populateGames(){
         "Nintendo",
         "Metroid",
         "Available",
-        [new ReviewScore(95, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(90, "Metacritic Users")],
+        [new ReviewScore(95, "IGN")],
         games.length
     ))
     games.push(new Game(
