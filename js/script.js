@@ -199,28 +199,34 @@ function populateGames(){
 
 
 //get games
-function getGame(id){
+function getGame(term){
     games = populateGames();
+    //try to find game from name
+    for(i=0; i<games.length; i++){
+        if(games[i].title.toLowerCase().includes(term.toString().toLowerCase())) return games[i];
+    }
     //try to find game from id
-    console.log("Finding game with id: "+id);
     for(i=0; i<games.length; i++){
         console.log(games[i].id);
-        if(games[i].id==id) return games[i];
+        if(games[i].id==term) return games[i];
     }
-    //if return not reached, try to find game from name
-    console.log("Failed, trying name instead");
-    for(i=0; i<games.length; i++){
-        if(games[i].title.toLowerCase().includes(id.toString().toLowerCase())) return games[i];
 
-    }
     //if return still not reached just get id 0
     return getGame(0);
 }
 
 
+function getGamesName(name){
+    result = [];
+    for(i=0; i<games.length; i++){
+        console.log(games[i].id);
+        if(games[i].title.toLowerCase().includes(name.toString().toLowerCase())) result.push(games[i]);
+    }
+    return result
+}
 
-function viewGame(gameID){
-    localStorage.setItem("SelectedGame",gameID)
+function viewGame(game){
+    localStorage.setItem("SelectedGame",game)
     window.location.href = "game.html"
 }
 
@@ -257,7 +263,7 @@ function addGame(){
 function displayPlatforms(){
     consoles = populateGameConsoles();
     for (i = 0; i<consoles.length; i++){
-        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' class='platformLogo'>";
+        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' alt="+consoles[i].title+" class='platformLogo'>";
     }
 }
         function displayAllGames(){
