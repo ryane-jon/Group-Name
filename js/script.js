@@ -235,11 +235,14 @@ function addGame(){
 
     //display game info
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
+    gameImgLink = game.title.split(" ").join("")
+    gameImgLink = gameImgLink.replace(":","")
+    document.getElementById("gameContent").innerHTML += "<img src=images/games/"+gameImgLink+".jpg width=10%>"
 
     document.getElementById("gameContent").innerHTML += "<h5>"
-    document.getElementById("gameContent").innerHTML += game.gameConsole[0].title;
+
     for (i=0; i<game.gameConsole.length; i++){
-            document.getElementById("gameContent").innerHTML += ", "+game.gameConsole[i].title;
+            document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" ,";
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
  document.getElementById("gameContent").innerHTML += "Genre: ";
