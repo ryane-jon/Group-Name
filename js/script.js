@@ -163,7 +163,7 @@ function populateGames(){
         ["Racing"],
         2005,
         "Nintendo",
-        "Nintedo",
+        "Nintendo",
         "Mario Kart",
         'Unavailable',
         [new ReviewScore(95, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
@@ -266,10 +266,13 @@ function displayPlatforms(){
         document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' alt="+consoles[i].title+" class='platformLogo'>";
     }
 }
-        function displayAllGames(){
-    games = populateGames()
-    for(i=0; i<games.length; i++){
-        game = games[i]
-        document.getElementById("allgamesDescription").innerHTML += "<p>"+game.title+"</p>";
+function displayGame(){
+    games = populateGames();
+    for(i=0;i<games.length;i++){
+        console.log(document.getElementById("allgames").textContent)
+        if (document.getElementById("allgames").textContent == games[i].title){
+            document.getElementById("gameDescription").innerHTML += "<p>"+games[i].title+"<br>"+games[i].genre+"<br>"+games[i].year+"<br>"+games[i].reviews+"<br>"+"</p>";
+        }
     }
 }
+

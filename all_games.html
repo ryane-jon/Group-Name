@@ -39,21 +39,25 @@
                     <tr>
                       <th scope="row"></th>
                       <td>
-                        <button id="allgames" onclick="viewGame(0)">Super Metroid</button> <br>
-                        <section id="allgamesDescription">
-                            <script>displayAllGames();</script>
+                        <section id = "gameDescription">
+                        <button id="allgames" onclick="viewGame('Super Metroid')">Super Metroid</button> <br>
+                        
+                            </td>
+                            <td><button id="allgames" onclick="viewGame('Resident Evil 4 (Classic)')">Resident Evil 4 (Classic) </button> </td>
+                            <td><button id="allgames" onclick="viewGame('Super Mario Galaxy')">Super Mario Galaxy</button></td>
+                            <td><button id="allgames" onclick="viewGame('Grand Theft Auto 5')">Grand Theft Auto 5</button></td>
+                            </tr> 
+                            <script>
+                                displayGame();
+                            </script>
                         </section>
-                    </td>
-                      <td><button id="allgames" onclick="viewGame(1)">Resident Evil 4 (Classic)</button> </td>
-                      <td><button id="allgames" onclick="viewGame(2)">Super Mario Galaxy</button></td>
-                      <td><button id="allgames" onclick="viewGame(3)">Grand Theft Auto 5</button></td>
-                    </tr>
+                    
         <button id="allgames" onclick="viewGame(0)">Super Metroid</button> 
         <button id="allgames" onclick="viewGame(1)">Resident Evil 4 (Classic)</button> 
         <button id="allgames" onclick="viewGame(2)">Super Mario Galaxy</button> 
         <button id="allgames" onclick="viewGame(3)">Grand Theft Auto 5</button> 
         <button id="allgames" onclick="viewGame(4)">Rainbow Six Siege</button> 
-        <button id="allgames" onclick="viewGame(5)">Super Mario Oddysey</button> 
+        <button id="allgames" onclick="viewGame(5)">Super Mario Odyssey</button> 
         <button id="allgames" onclick="viewGame(6)">Elden Ring</button> 
         </section>
     </body>
