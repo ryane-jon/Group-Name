@@ -270,61 +270,34 @@ function displayPlatforms(){
         document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' alt="+consoles[i].title+" class='platformLogo'>";
     }
 }
-function displayGame(){
-    games = populateGames();
-    for(i=0;i<games.length;i++){
-        console.log(document.getElementById("allgames").textContent)
-        if (document.getElementById("allgames").textContent == games[i].title){
-            document.getElementById("gameDescription").innerHTML += "<p>"+games[i].title+"<br>"+games[i].genre+"<br>"+games[i].year+"<br>"+games[i].reviews+"<br>"+"</p>";
-        }
-    }
-}
 
 function displayGameNew(){
     games = populateGames()
     htmlContent = ""
     //htmlContent +="<div id=img-gallery class = container>"
     i=0
+    img = []
     while(i<games.length-1){
-        console.log("loop 1")
+        
         htmlContent += "<div class = row>"
         for(j=0;j<4;j++){
             if (games[i]!=null){
-                console.log("loop 2")
                 gameImgLink = games[i].title.split(" ").join("")
                 gameImgLink = gameImgLink.replace(":","")
-                htmlContent += "<div class = col-sm> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px> </div>"
-                i++
+                htmlContent += "<div class = col-sm> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)> </div>";
+                i++;
+                
             } else {
                 htmlContent += "<div class = col-sm></div>"
             }
 
             
         }
+        console.log("img: "+img)
         htmlContent += "</div>"
+        
         
     }
     //htmlContent += "</div>"
     document.getElementById("gameDescription").innerHTML += htmlContent
 }
-
-
-/*
-function displayGameNew() {
-    let games = populateGames(); // Populate the games array
-    let htmlContent = ""; // Initialize a string to build the HTML
-
-    for (let i = 0; i < games.length; i += 4) { // Increment by 4 for each row
-        htmlContent += "<div class='row'>"; // Start a new row
-
-        for (let j = i; j < i + 4 && j < games.length; j++) { // Display 4 games or stop if array ends
-            let gameImgLink = games[j].title.split(" ").join("").replace(":", ""); // Generate image link
-            htmlContent += "<div class='col-sm'>"; // Column wrapper
-            htmlContent += "<img src='images/games/" + gameImgLink + ".jpg' width='10%'>"; // Game image
-            htmlContent += "</div>"; // Close column
-        }
-
-        htmlContent += "</div>"; // Close row
-    }
-
-*/
