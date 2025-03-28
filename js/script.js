@@ -240,9 +240,10 @@ function addGame(){
     document.getElementById("gameContent").innerHTML += "<img src=images/games/"+gameImgLink+".jpg width=10%>"
 
     document.getElementById("gameContent").innerHTML += "<h5>"
+    document.getElementById("gameContent").innerHTML += game.gameConsole[0].title;
 
-    for (i=0; i<game.gameConsole.length; i++){
-            document.getElementById("gameContent").innerHTML += game.gameConsole[i].title+" ,";
+    for (i=1; i<game.gameConsole.length; i++){
+        document.getElementById("gameContent").innerHTML += ", "+game.gameConsole[i].title;
     }
     document.getElementById("gameContent").innerHTML += "<h5>"
  document.getElementById("gameContent").innerHTML += "Genre: ";
