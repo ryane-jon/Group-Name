@@ -235,6 +235,9 @@ function addGame(){
 
     //display game info
     document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
+    gameimgLInk = game.title.split(" ").join("")
+    console.log(gameimgLInk)
+    document.getElementById("gameContent").innerHTML += "<img src=images/games/"+gameimgLInk+".jpg width=10%>"
 
     document.getElementById("gameContent").innerHTML += "<h5>"
     document.getElementById("gameContent").innerHTML += game.gameConsole[0].title;
