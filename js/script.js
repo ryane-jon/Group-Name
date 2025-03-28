@@ -219,10 +219,25 @@ function getGame(term){
 function getGamesName(name){
     result = [];
     for(i=0; i<games.length; i++){
-        console.log(games[i].id);
         if(games[i].title.toLowerCase().includes(name.toString().toLowerCase())) result.push(games[i]);
     }
     return result
+}
+
+function getGamesConsole(gameConsoleId){
+    console.log("----GAMES FOR "+populateGameConsoles()[gameConsoleId].title)
+    games = populateGames();
+    result = [];
+    for(i=0; i<games.length; i++){
+        for(j=0; j<games[i].gameConsole.length; j++){
+            if (games[i].gameConsole[j].id==parseInt(gameConsoleId)){
+                result.push(games[i].title)
+                console.log(games[i].title)
+                break
+            }
+        }
+    }
+    return result;
 }
 
 function viewGame(game){
@@ -267,7 +282,7 @@ function addGame(){
 function displayPlatforms(){
     consoles = populateGameConsoles();
     for (i = 0; i<consoles.length; i++){
-        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' alt="+consoles[i].title+" class='platformLogo'>";
+        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' onclick='getGamesConsole("+consoles[i].id+")' class='platformLogo'>";
     }
 }
 function displayGame(){
