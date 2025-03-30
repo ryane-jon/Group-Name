@@ -59,6 +59,7 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("Game Boy Advance","Unavailable",gameConsoles.length))//19
     gameConsoles.push(new GameConsole("Nintendo DS","Unavailable",gameConsoles.length))//20
     gameConsoles.push(new GameConsole("Nintendo DSi","Unavailable",gameConsoles.length))//21
+    gameConsoles.push(new GameConsole("Alexa","Available",gameConsoles.length))//22
     return gameConsoles;
 }
 
@@ -193,29 +194,45 @@ function populateGames(){
         [new ReviewScore(98, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
         games.length
     ))
+
+//Ryan's Games
+    games.push(new Game(
+        "The Elder Scrolls V: Skyrim",
+        [gameConsoles[3], gameConsoles[5], gameConsoles[6], gameConsoles[7], gameConsoles[8], gameConsoles[9], gameConsoles[10], gameConsoles[18], gameConsoles[22]], 
+        ["Action RPG"],
+        2011,
+        "Bethesda Game Studios",
+        "Bethesda Softworks",
+        "The Elder Scrolls",
+        "Available",
+        [new ReviewScore(95, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
+        games.length
+    ))
     return games;
 }
 
 
 
 //get games
+//get one game from a nonspecific term
 function getGame(term){
     games = populateGames();
+    //try to find game from id
+        for(i=0; i<games.length; i++){
+            console.log(games[i].id);
+            if(games[i].id==term) return games[i];
+        }
     //try to find game from name
     for(i=0; i<games.length; i++){
         if(games[i].title.toLowerCase().includes(term.toString().toLowerCase())) return games[i];
     }
-    //try to find game from id
-    for(i=0; i<games.length; i++){
-        console.log(games[i].id);
-        if(games[i].id==term) return games[i];
-    }
+
 
     //if return still not reached just get id 0
     return getGame(0);
 }
 
-
+//get a list of games from name
 function getGamesName(name){
     result = [];
     for(i=0; i<games.length; i++){
@@ -224,6 +241,7 @@ function getGamesName(name){
     return result
 }
 
+//get a list of games from console
 function getGamesConsole(gameConsoleId){
     console.log("----GAMES FOR "+populateGameConsoles()[gameConsoleId].title)
     games = populateGames();
@@ -290,10 +308,8 @@ function displayGameNew(){
     games = populateGames()
     htmlContent = ""
     //htmlContent +="<div id=img-gallery class = container>"
-    i=0
     img = []
-    while(i<games.length-1){
-        
+    for(i=0; i<games.length;){
         htmlContent += "<div class = row>"
         for(j=0;j<4;j++){
             if (games[i]!=null){
@@ -301,17 +317,12 @@ function displayGameNew(){
                 gameImgLink = gameImgLink.replace(":","")
                 htmlContent += "<div class = col-sm> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)> </div>";
                 i++;
-                
             } else {
                 htmlContent += "<div class = col-sm></div>"
             }
-
-            
         }
         console.log("img: "+img)
         htmlContent += "</div>"
-        
-        
     }
     //htmlContent += "</div>"
     document.getElementById("gameDescription").innerHTML += htmlContent
