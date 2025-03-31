@@ -308,20 +308,23 @@ function displayGameNew(){
     games = populateGames()
     htmlContent = ""
     //htmlContent +="<div id=img-gallery class = container>"
-    img = []
     for(i=0; i<games.length;){
         htmlContent += "<div class = row>"
         for(j=0;j<4;j++){
             if (games[i]!=null){
                 gameImgLink = games[i].title.split(" ").join("")
                 gameImgLink = gameImgLink.replace(":","")
-                htmlContent += "<div class = col-sm> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)> </div>";
+                htmlContent += "<div class = col-sm> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)>";
+                htmlContent += "<h6>"+games[i].title+"</h6>"
+                htmlContent += "<p>Release Date: "+games[i].year+"</p><p>Genre: "+games[i].genre+"</p></div>";
+                //for (r=0; r<games.reviews.length;r++){
+                    //htmlContent += "<p>"+games.reviews[r].score+" from "+games.reviews[r].source+"</p></div>";
+                //}
                 i++;
             } else {
                 htmlContent += "<div class = col-sm></div>"
             }
         }
-        console.log("img: "+img)
         htmlContent += "</div>"
     }
     //htmlContent += "</div>"
