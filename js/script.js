@@ -304,7 +304,7 @@ function displayPlatforms(){
     }
 }
 
-function displayGameNew(){
+function displayGame(){
     games = populateGames()
     htmlContent = ""
     //htmlContent +="<div id=img-gallery class = container>"
@@ -314,9 +314,9 @@ function displayGameNew(){
             if (games[i]!=null){
                 gameImgLink = games[i].title.split(" ").join("")
                 gameImgLink = gameImgLink.replace(":","")
-                htmlContent += "<div class = col-sm> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)>";
+                htmlContent += "<div class = col-sm><div class = displayGames> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)>";
                 htmlContent += "<h6>"+games[i].title+"</h6>"
-                htmlContent += "<p>Release Date: "+games[i].year+"</p><p>Genre: "+games[i].genre+"</p></div>";
+                htmlContent += "<p>Release Date: "+games[i].year+"</p><p>Genre: "+games[i].genre+"</p></div></div>";
                 //for (r=0; r<games.reviews.length;r++){
                     //htmlContent += "<p>"+games.reviews[r].score+" from "+games.reviews[r].source+"</p></div>";
                 //}

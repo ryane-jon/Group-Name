@@ -97,3 +97,10 @@ footer{
     padding:20px;
     vertical-align:top;
 }
+
+.displayGames{
+    background-color: #874f41;
+    padding:10px;
+    padding-bottom:0%;
+    text-align:center;    
+}
