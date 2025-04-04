@@ -304,6 +304,19 @@ function displayPlatforms(){
     }
 }
 
+function getAverageReview(game){
+    reviewCount = 0;
+    reviewAverage = 0;
+    console.log(game.title+" "+game.reviews.length)
+    for(j=0; j<game.reviews.length; j++){
+        reviewCount++;
+        reviewAverage+=game.reviews[j].score;
+        console.log(reviewCount+" "+reviewAverage);
+    }
+    reviewAverage = reviewAverage/reviewCount;
+    return reviewAverage;
+}
+
 function displayGame(){
     games = populateGames()
     htmlContent = ""
@@ -316,10 +329,7 @@ function displayGame(){
                 gameImgLink = gameImgLink.replace(":","")
                 htmlContent += "<div class = col-sm><div class = displayGames> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)>";
                 htmlContent += "<h6>"+games[i].title+"</h6>"
-                htmlContent += "<p>Release Date: "+games[i].year+"</p><p>Genre: "+games[i].genre+"</p></div></div>";
-                //for (r=0; r<games.reviews.length;r++){
-                    //htmlContent += "<p>"+games.reviews[r].score+" from "+games.reviews[r].source+"</p></div>";
-                //}
+                htmlContent += "<p>Release Date: "+games[i].year+"</p><p>Genre: "+games[i].genre+"</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></div></div>";
                 i++;
             } else {
                 htmlContent += "<div class = col-sm></div>"
