@@ -327,11 +327,11 @@ function displayGame(){
             if (games[i]!=null){
                 gameImgLink = games[i].title.split(" ").join("")
                 gameImgLink = gameImgLink.replace(":","")
-                htmlContent += "<div class = col-sm><div class = displayGames> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)>";
+                htmlContent += "<div class = col-sm><div class = displayGames><button id = gameButton onclick=viewGame(games["+i+"].title)> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px>";
                 htmlContent += "<h6>"+games[i].title+"</h6>"
                 htmlContent += "<p>Release Date: "+games[i].year+
                     "</p><p>Genre: "+games[i].genre+
-                    "</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></div></div>";
+                    "</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></button></div></div>";
                 i++;
             } else {
                 htmlContent += "<div class = col-sm></div>"

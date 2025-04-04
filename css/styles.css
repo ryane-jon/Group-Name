@@ -99,8 +99,39 @@ footer{
 }
 
 .displayGames{
-    background-color: #874f41;
     padding:10px;
     padding-bottom:0%;
     text-align:center;    
+}
+
+/* All Games Buttons */
+
+#gameButton{
+    background-color:#874f41;
+    border-color: black;
+    width:250px;
+    height:410px;
+    font-family: arial;
+}
+
+
+
+#gameButton:hover{
+    animation: pulse 1500ms infinite;
+}
+
+#gameButton:disabled:hover{
+    animation: none;
+}
+
+@keyframes pulse{
+    0% {
+        transform: scale(1);
+    }
+    33% {
+        transform: scale(0.98);
+    }
+    67% {
+        transform: scale(1.01)
+    }
 }
