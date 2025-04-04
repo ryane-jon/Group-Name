@@ -258,7 +258,7 @@ function populateGames(){
         "id Software",
         "Doom",
         "Available",
-        [new ReviewScore(85, "IGN"), new ReviewScore(80, "Metacritic Users")],
+        [new ReviewScore(80, "IGN"), new ReviewScore(85, "Metacritic Users")],
         games.length
     ))
     return games;
