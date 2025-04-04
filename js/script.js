@@ -60,6 +60,11 @@ function populateGameConsoles(){
     gameConsoles.push(new GameConsole("Nintendo DS","Unavailable",gameConsoles.length))//20
     gameConsoles.push(new GameConsole("Nintendo DSi","Unavailable",gameConsoles.length))//21
     gameConsoles.push(new GameConsole("Alexa","Available",gameConsoles.length))//22
+    gameConsoles.push(new GameConsole("N64","Unavailable",gameConsoles.length))//23
+    gameConsoles.push(new GameConsole("Playstation","Unavailable",gameConsoles.length))//24
+    gameConsoles.push(new GameConsole("Sega Genesis","Unavailable",gameConsoles.length))//25
+    gameConsoles.push(new GameConsole("Xbox","Unavailable",gameConsoles.length))//26
+
     return gameConsoles;
 }
 
@@ -185,7 +190,7 @@ function populateGames(){
     games.push(new Game(
         "Resident Evil 4",
         [gameConsoles[2],gameConsoles[1],gameConsoles[3],gameConsoles[4],gameConsoles[16],gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
-        ["action horror"],
+        ["Action Horror"],
         2005,
         "Capcom",
         "Capcom",
@@ -206,6 +211,54 @@ function populateGames(){
         "The Elder Scrolls",
         "Available",
         [new ReviewScore(95, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Blood",
+        [gameConsoles[18]], 
+        ["First-Person Shooter"],
+        1997,
+        "Monolith Productions",
+        "GT Interactive",
+        "Blood",
+        "Available",
+        [new ReviewScore(82, "Metacritic"), new ReviewScore(88, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Shadow Warrior",
+        [gameConsoles[18]], 
+        ["First-Person Shooter"],
+        1997,
+        "3D Realms",
+        "GT Interactive",
+        "",
+        "Available",
+        [new ReviewScore(86, "IGN"), new ReviewScore(83, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "Duke Nukem 3D",
+        [gameConsoles[18], gameConsoles[23], gameConsoles[24], gameConsoles[10], gameConsoles[17], gameConsoles[25], gameConsoles[3], gameConsoles[5], gameConsoles[6], gameConsoles[9], gameConsoles[8]], 
+        ["First-Person Shooter"],
+        1996,
+        "3D Realms",
+        "FormGen",
+        "Duke Nukem",
+        "Available",
+        [new ReviewScore(85, "IGN"), new ReviewScore(80, "Metacritic Users")],
+        games.length
+    ))
+    games.push(new Game(
+        "DOOM",
+        [gameConsoles[18], gameConsoles[0], gameConsoles[24], gameConsoles[18], gameConsoles[19], gameConsoles[26], gameConsoles[6], gameConsoles[10],gameConsoles[3], gameConsoles[9],gameConsoles[5],gameConsoles[8],gameConsoles[7]], 
+        ["First-Person Shooter"],
+        1993,
+        "id Software",
+        "id Software",
+        "Doom",
+        "Available",
+        [new ReviewScore(85, "IGN"), new ReviewScore(80, "Metacritic Users")],
         games.length
     ))
     return games;
