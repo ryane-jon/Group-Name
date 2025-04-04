@@ -83,7 +83,7 @@ function populateGames(){
         games.length
     ))
     games.push(new Game(
-        "Grand Theft Auto 5", 
+        "Grand Theft Auto V", 
         [gameConsoles[5],gameConsoles[6],gameConsoles[7],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
         ["Action"],
         2013,
