@@ -329,7 +329,9 @@ function displayGame(){
                 gameImgLink = gameImgLink.replace(":","")
                 htmlContent += "<div class = col-sm><div class = displayGames> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px onclick=viewGame(games["+i+"].title)>";
                 htmlContent += "<h6>"+games[i].title+"</h6>"
-                htmlContent += "<p>Release Date: "+games[i].year+"</p><p>Genre: "+games[i].genre+"</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></div></div>";
+                htmlContent += "<p>Release Date: "+games[i].year+
+                    "</p><p>Genre: "+games[i].genre+
+                    "</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></div></div>";
                 i++;
             } else {
                 htmlContent += "<div class = col-sm></div>"
