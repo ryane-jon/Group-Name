@@ -121,7 +121,7 @@ function populateGames(){
         "Elden Ring",
         [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[7],gameConsoles[18]], 
         ["Action Roleplay"],
-        2017,
+        2022,
         "FromSoftware",
         "FromSoftware",
         "Dark Souls",
