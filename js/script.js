@@ -370,6 +370,16 @@ function getAverageReview(game){
     return reviewAverage;
 }
 
+function getConsole(game){
+    consoleToStr = ""
+    consoleToStr += game.gameConsole[0].title;
+    for (c=1; c<game.gameConsole.length; c++){
+        consoleToStr += ", "
+        consoleToStr += game.gameConsole[c].title;   
+    }
+    return consoleToStr
+}
+
 function displayGame(){
     games = populateGames()
     htmlContent = ""
@@ -380,8 +390,9 @@ function displayGame(){
             if (games[i]!=null){
                 gameImgLink = games[i].title.split(" ").join("")
                 gameImgLink = gameImgLink.replace(":","")
-                htmlContent += "<div class = col-sm><div class = displayGames><button id = gameButton onclick=viewGame(games["+i+"].title)> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px>";
+                htmlContent += "<div class = col-sm> <div class = displayGames id = gameImgLink><button id = gameButton onclick=viewGame(games["+i+"].title)> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px>";
                 htmlContent += "<h6>"+games[i].title+"</h6>"
+                htmlContent += "<p>"+getConsole(games[i])+"</p>"
                 htmlContent += "<p>Release Date: "+games[i].year+
                     "</p><p>Genre: "+games[i].genre+
                     "</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></button></div></div>";
@@ -402,15 +413,68 @@ function populateConsoleFilter(){
     htmlContent = ""
     consoles = populateGameConsoles();
     for (i = 0; i<consoles.length; i++){
-        gameconsole[i] = gameConsoles[i].title
-        
+        gameconsole[i] = gameConsoles[i].title   
     }
-    console.log("gameconsole array: "+gameconsole)
+    htmlContent += "<option value=All>All</option>";
+    //console.log("gameconsole array: "+gameconsole)
     for(i=0; i<gameconsole.length;){
-        htmlContent+= "<option value="+gameconsole[i]+">"+gameconsole[i]+"</option>";
-        console.log("console title: "+gameconsole[i])
+        consoleLink = gameconsole[i].split(" ").join("")
+        consoleLink = consoleLink.replace(":","") 
+        htmlContent+= "<option value="+consoleLink+">"+gameconsole[i]+"</option>";
+        console.log(consoleLink)
+        //console.log("console title: "+gameconsole[i])
         i++;
         
     }
     document.getElementById("console").innerHTML += htmlContent;
 }
+
+/*
+function applyFilters(){
+    console.log("found function applyFilters")
+    const selectedValue = document.getElementById("console").value;
+    console.log(selectedValue)
+    const items = document.querySelectorAll(".displayGames");
+
+    items.forEach(item => {
+        console.log(getGamesConsole(item))
+        if (selectedValue === "All") {
+            item.classList.remove("hidden");
+        } else {
+            item.id === selectedValue ? 
+        }
+    });
+}
+*/
+
+
+
+
+function applyFilters(){
+    games = populateGames()
+    const selectedValue = document.getElementById("console").value;
+    console.log(selectedValue)
+    console.log(games[0].title)
+    const items = document.querySelectorAll(".displayGames");
+    g = 0
+    items.forEach(item => {
+    if (selectedValue === "All"){
+        item.classList.remove("hidden");
+    } else {
+            item.classList.add("hidden");
+            found = false
+            for(c=0;c<games[g].gameConsole.length;c++){
+                if(games[g].gameConsole[c].title == selectedValue){
+                    console.log(games[g])
+                    console.log(games[g].gameConsole[c].title)
+                    console.log(selectedValue)
+                    item.classList.remove("hidden")
+                    found = true
+            }
+        }
+        g++
+    }
+    });
+
+}
+
