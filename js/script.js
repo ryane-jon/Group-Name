@@ -342,3 +342,22 @@ function displayGame(){
     //htmlContent += "</div>"
     document.getElementById("gameDescription").innerHTML += htmlContent
 }
+
+function populateConsoleFilter(){
+    games = populateGames()
+    gameconsole = [];
+    htmlContent = ""
+    consoles = populateGameConsoles();
+    for (i = 0; i<consoles.length; i++){
+        gameconsole[i] = gameConsoles[i].title
+        
+    }
+    console.log("gameconsole array: "+gameconsole)
+    for(i=0; i<gameconsole.length;){
+        htmlContent+= "<option value="+gameconsole[i]+">"+gameconsole[i]+"</option>";
+        console.log("console title: "+gameconsole[i])
+        i++;
+        
+    }
+    document.getElementById("console").innerHTML += htmlContent;
+}

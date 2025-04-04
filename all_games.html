@@ -25,6 +25,14 @@
             </ul>
         </nav>
         <section class = "genericSection">
+            <p>Filters:</p>
+            <ul>
+                <li><form id="filters">
+                    <select id = "console" name="console">
+                        <script>populateConsoleFilter()</script>
+                    </select>
+                </form></li>
+            </ul>
             <section id="gameDescription">
                     <script>
                         displayGame();
