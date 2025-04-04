@@ -308,9 +308,9 @@ function getAverageReview(game){
     reviewCount = 0;
     reviewAverage = 0;
     console.log(game.title+" "+game.reviews.length)
-    for(j=0; j<game.reviews.length; j++){
+    for(k=0; k<game.reviews.length; k++){
         reviewCount++;
-        reviewAverage+=game.reviews[j].score;
+        reviewAverage+=game.reviews[k].score;
         console.log(reviewCount+" "+reviewAverage);
     }
     reviewAverage = reviewAverage/reviewCount;
