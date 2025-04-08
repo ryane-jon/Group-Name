@@ -20,8 +20,8 @@
             <h1><a href="index.html" id = "title">GroupGame</a></h1>
         </header>
         <!-------------------------- NAVBAR --------------------------->
-        <nav class="mb-4">
-            <ul class="nav justify-content-center">
+        <nav>
+            <ul>
                 <li>Popular</li>
                 <li>Genres</li>
                 <li>Platforms</li>
@@ -35,31 +35,65 @@
         <!------------------------------------------------------------->
         
 
-        <div class="container">
+        <section class="genericSection">
             <div class="row">
-                <div class="col-md-4 text-center mb-4">
+                <div class="col-sm" id = profileLeftCol>
                     <!-------------------------- Profile Picture --------------------------->
                     <img src="images\platformLogos\nintendo ds.jpg" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
                     <!---------------------------------------------------------------------->
 
                     <!-------------------------- Username & Bio ---------------------------->
-                    <h3>Username</h3>
-                    <p>User Bio goes here - Lorem ipsum jfhbdjfhbdjfbsdjhbjshbf jshb fjshbf jsdhfbjsdhbfjs hbfjh sbfjhb sdhfj sssss s s sssss s sss ss ss</p>
+                    <h3>Username12345</h3>
+                    <p>User Bio goes here -
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                           Excepteur sint occaecat cupidatat non proident,
+                            sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     <!---------------------------------------------------------------------->
+
+                    <!------------------------- Social Media Links ------------------------->
+                    <h4>Connections:</h4>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="https://twitter.com" class="btn btn-outline-light btn-sm">Twitter</a></li>
+                        <li class="list-inline-item"><a href="https://facebook.com" class="btn btn-outline-light btn-sm">Facebook</a></li>
+                        <li class="list-inline-item"><a href="https://instagram.com" class="btn btn-outline-light btn-sm">Instagram</a></li>
+                    </ul>
+                    <!---------------------------------------------------------------------->
+
                 </div>
-                <div class="col-md-8 mb-4">
+                <div class="col-sm" id ="profileRightCol">
                     <!------------------------- Select Preferences ------------------------->
                     <h4>Game Preferences</h4>
                     <form>
                         <div class="md-3">
                             <label for="genres" class="form-label">Select any Genres you're interested in:</label>
                             <select multiple class="form-select" id="genres">
+                                <option>2D Platformer</option>
+                                <option>3D Platformer</option>
                                 <option>Action</option>
+                                <option>Action Horror</option>
+                                <option>Action Roleplay</option>
+                                <option>Action RPG</option>
+                                <option>Action Shooter</option>
                                 <option>Adventure</option>
+                                <option>Clicker game</option>
+                                <option>First-Person Shooter</option>
+                                <option>Horror</option>
+                                <option>Idle</option>
+                                <option>Incremental</option>
+                                <option>Metroidvania</option>
+                                <option>Racing</option>
+                                <option>Roleplay</option>
+                                <option>Roguelike</option>
                                 <option>RPG</option>
+                                <option>Shooter</option>
                                 <option>Simulation</option>
+                                <option>Stealth Action</option>
                                 <option>Strategy</option>
                                 <option>Sports</option>
+                                <option>Top-Down Shooter</option>
                             </select>
                         </div>
                     </form>
@@ -68,15 +102,16 @@
                     <!-------------- Favourites (Placeholder) --------------->
                     <h4>Favourites</h4>
                     <ul class="list-group">
-                        <li class="list-group-item">Portal 2</li>
-                        <li class="list-group-item">Minecraft</li>
-                        <li class="list-group-item">Lethal Company</li>
-                        <li class="list-group-item">Roblox</li>
-                        <li class="list-group-item">The Stanley Parable</li>
+                        <li class="list-group-item">Super Mario Galaxy ★</li>
+                        <li class="list-group-item">Super Mario Odyssey ★</li>
+                        <li class="list-group-item">Grand Theft Auto 5 ★</li>
+                        <li class="list-group-item">Elden Ring ★</li>
+                        <li class="list-group-item">Resident Evil 4 (Classic) ★</li>
+                        <!--<li class="list-group-item"> +ADD GAME </li>-->
                     </ul>
                     <!-------------------------------------------------------->
                 </div>
             </div>
-        </div>
+        </section>
     </body>
 </html>
