@@ -1,5 +1,5 @@
 //Game Constructor
-function Game(title, gameConsole, genre, year, developer, publisher, series, availability, reviews, id) {
+function Game(title, gameConsole, genre, year, developer, publisher, series, availability, reviews,info, id) {
     this.title = title; // The title of the game -- String
     this.gameConsole = gameConsole; // The gameConsole(s) that the game is on -- Array of String
     this.genre = genre; // The genre -- Array of String
@@ -9,6 +9,7 @@ function Game(title, gameConsole, genre, year, developer, publisher, series, ava
     this.series = series; // The series the game is a part of (if any) -- String
     this.availability = availability; // is the game still available to buy -- String -- "Available", "Overpriced", "Partial", "Unavailable" etc
     this.reviews = reviews // the existing reviews for this game -- Array of ReviewScore
+    this.info= info// info about the games ports
     this.id = id; // self explanitory -- int
 }
 
@@ -85,6 +86,7 @@ function populateGames(){
         "Mario",
         "Available",
         [new ReviewScore(97, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -96,6 +98,7 @@ function populateGames(){
         "Grand Theft Auto",
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(85, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -108,6 +111,7 @@ function populateGames(){
         "Tom Clancy",
         "Available",
         [new ReviewScore(85, "IGN"), new ReviewScore(73, "Metacritic"), new ReviewScore(71, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -120,6 +124,7 @@ function populateGames(){
         "Mario",
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(89, "Metacritic Users")],
+        "",
         games.length
     )) 
     games.push(new Game(
@@ -132,6 +137,7 @@ function populateGames(){
         "Dark Souls",
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(82, "Metacritic Users")],
+        "",
         games.length
     )) 
     
@@ -147,6 +153,12 @@ function populateGames(){
         'Metal Gear',
         'Available',
         [new ReviewScore(96, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(84, "Metacritic Users")],
+        "PS2 had another version called Subsistence Which added a 3rd Person Camera. This version is used for every port"+
+        "<br>The PS3,Xbox 360 And PSVita versions are avalalibe as Metal Gear Solid HD collection"+
+        "<br>Both PS2 Versions are Playble on The first PS3 models Via Backwards Compatibility"+
+        "<br>The Xbox 360 version Is playable on Xbox One And Xbox Series X via Backwards Compatibility"+
+        "<br>The 3DS version is Know As Metal Gear Solid: Snake Eater 3D"+
+        "<br>The PS4,PS5,Xbox Series X And Nintendo Switch Versions are avalalibe via Metal Gear Solid: Master Collection vol 1",
         games.length
     ));
     games.push(new Game(
@@ -159,12 +171,15 @@ function populateGames(){
         'Zelda',
         'Available',
         [new ReviewScore(100, "IGN"), new ReviewScore(84, "Metacritic"), new ReviewScore(80, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
         "Mario Kart DS",
         [gameConsoles[20],
         gameConsoles[21],
+        gameConsoles[14],
+        gameConsoles[15],
         gameConsoles[16]],
         ["Racing"],
         2005,
@@ -173,6 +188,8 @@ function populateGames(){
         "Mario Kart",
         'Unavailable',
         [new ReviewScore(95, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
+        "can be played on DSi,3DS,New 3DS Via Backwards Compatibility"+
+        "<br>Wii U version was avaliable via the eShop but is not anymore",
         games.length
     ))
     games.push(new Game(
@@ -185,6 +202,8 @@ function populateGames(){
         "Metroid",
         "Available",
         [new ReviewScore(95, "IGN")],
+        "Wii, WiiU, New 3DS versions were avaliable via eShop but are not anymore"+
+        "<br>Nintendo Switch Version is avaliable via Nintendo switch Online",
         games.length
     ))
     games.push(new Game(
@@ -197,6 +216,7 @@ function populateGames(){
         "Resident Evil",
         "Available",
         [new ReviewScore(98, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
+        "",
         games.length
     ))
 
@@ -211,6 +231,7 @@ function populateGames(){
         "The Elder Scrolls",
         "Available",
         [new ReviewScore(95, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -223,6 +244,7 @@ function populateGames(){
         "Blood",
         "Available",
         [new ReviewScore(82, "Metacritic"), new ReviewScore(88, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -235,6 +257,7 @@ function populateGames(){
         "",
         "Available",
         [new ReviewScore(86, "IGN"), new ReviewScore(83, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -247,6 +270,7 @@ function populateGames(){
         "Duke Nukem",
         "Available",
         [new ReviewScore(85, "IGN"), new ReviewScore(80, "Metacritic Users")],
+        "",
         games.length
     ))
     games.push(new Game(
@@ -259,6 +283,7 @@ function populateGames(){
         "Doom",
         "Available",
         [new ReviewScore(80, "IGN"), new ReviewScore(85, "Metacritic Users")],
+        "",
         games.length
     ))
     return games;
@@ -347,6 +372,7 @@ function addGame(){
 
         document.getElementById("gameContent").innerHTML += "<p>"+game.reviews[i].score+" from "+game.reviews[i].source+"</p>";
     }
+    document.getElementById("gameContent").innerHTML += "<p>"+game.info+"</p>";
 
 }
 
