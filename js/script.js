@@ -78,15 +78,17 @@ function populateGames(){
 
     games.push(new Game(
         "Super Mario Galaxy", 
-        [gameConsoles[4],gameConsoles[3]], 
+        [gameConsoles[4],gameConsoles[16],gameConsoles[3]], 
         ["Adventure","3D Platformer"],
         2007,
         "Nintendo",
         "Nintendo",
         "Mario",
-        "Available",
+        "Unavailable",
         [new ReviewScore(97, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
-        "",
+        "The Wii version is playable on the WiiU via Backwards Compatibility"+
+        "<br>Super Mario Galaxy is on the Wii, and WiiU eShop but can't be bought as those eShops were shut down"+
+        "<br>Playable on the Switch via Super Mario 3D all-stars and was only available for a 6 months",
         games.length
     ))
     games.push(new Game(
@@ -98,12 +100,13 @@ function populateGames(){
         "Grand Theft Auto",
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(85, "Metacritic Users")],
-        "",
+        "The PS4 and Xbox one Versions added a first Person Camera Option this was included in every other version except PS3 and xbox 360"+
+        "<br>Grand Theft Auto V is available on Steam,Xbox Games Store and Playstation Store",
         games.length
     ))
     games.push(new Game(
         "Rainbow Six Siege",
-        [gameConsoles[5],gameConsoles[6],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
+        [gameConsoles[5],gameConsoles[8],gameConsoles[9],gameConsoles[10],gameConsoles[18]], 
         ["Action Shooter"],
         2015,
         "Ubisoft",
@@ -111,7 +114,7 @@ function populateGames(){
         "Tom Clancy",
         "Available",
         [new ReviewScore(85, "IGN"), new ReviewScore(73, "Metacritic"), new ReviewScore(71, "Metacritic Users")],
-        "",
+        "Rainbow Six Siege is available on Steam,Xbox Games Store and Playstation Store",
         games.length
     ))
     games.push(new Game(
@@ -124,7 +127,7 @@ function populateGames(){
         "Mario",
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(89, "Metacritic Users")],
-        "",
+        "Super Mario Odyssey is available on the Nintendo Switch eShop",
         games.length
     )) 
     games.push(new Game(
@@ -137,7 +140,7 @@ function populateGames(){
         "Dark Souls",
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(82, "Metacritic Users")],
-        "",
+        "Elden Ring is available on Steam,Xbox Games Store and Playstation Store",
         games.length
     )) 
     
@@ -154,11 +157,13 @@ function populateGames(){
         'Available',
         [new ReviewScore(96, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(84, "Metacritic Users")],
         "PS2 had another version called Subsistence Which added a 3rd Person Camera. This version is used for every port"+
-        "<br>The PS3,Xbox 360 And PSVita versions are avalalibe as Metal Gear Solid HD collection"+
+        "<br>The PS3,Xbox 360 And PSVita versions are available as Metal Gear Solid HD collection"+
         "<br>Both PS2 Versions are Playble on The first PS3 models Via Backwards Compatibility"+
         "<br>The Xbox 360 version Is playable on Xbox One And Xbox Series X via Backwards Compatibility"+
-        "<br>The 3DS version is Know As Metal Gear Solid: Snake Eater 3D"+
-        "<br>The PS4,PS5,Xbox Series X And Nintendo Switch Versions are avalalibe via Metal Gear Solid: Master Collection vol 1",
+        "<br>The 3DS version is Know As Metal Gear Solid: Snake Eater 3D is also Playable on New 3ds"+
+        "<br>The 3DS version was on the 3DS eShop but can't be bought as the 3DS eShop was Shut down"+
+        "<br>The PS4,PS5,Xbox Series X,Nintendo Switch and PC Versions are available via Metal Gear Solid: Master Collection vol 1",
+        "<br>Metal Gear Solid 3 is available on Steam,Xbox Games Store and Playstation Store",
         games.length
     ));
     games.push(new Game(
@@ -168,10 +173,14 @@ function populateGames(){
         1986,
         'Nintendo',
         'Nintendo',
-        'Zelda',
+        'Legend of Zelda',
         'Available',
         [new ReviewScore(100, "IGN"), new ReviewScore(84, "Metacritic"), new ReviewScore(80, "Metacritic Users")],
-        "",
+        "Playable on Gamecube via The Legend of Zelda: Collector's Edition"+
+        "<br>Playable on Gameboy advance via Classic Nes Series: The Legend of Zelda"+
+        "<br>The Lengend of zelda is on The Nintendo Wii, Wii U, Nintendo 3DS eShops but can't be bought as those eShops were shut down"+
+        "<br>3DS Version is Playble on The New Nintendo 3DS"+
+        "<br>Nintendo Switch Version is available on Nintendo switch Online",
         games.length
     ))
     games.push(new Game(
@@ -189,7 +198,7 @@ function populateGames(){
         'Unavailable',
         [new ReviewScore(95, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
         "can be played on DSi,3DS,New 3DS Via Backwards Compatibility"+
-        "<br>Wii U version was avaliable via the eShop but is not anymore",
+        "<br>Wii U version is on the WiiU eShop but can't be bought as The WiiU eShop was shut down",
         games.length
     ))
     games.push(new Game(
@@ -202,8 +211,9 @@ function populateGames(){
         "Metroid",
         "Available",
         [new ReviewScore(95, "IGN")],
-        "Wii, WiiU, New 3DS versions were avaliable via eShop but are not anymore"+
-        "<br>Nintendo Switch Version is avaliable via Nintendo switch Online",
+        "Super Metroid is on the Wii,WiiU and 3DS eShop but can't be bought as the eShop was shut down"+
+        "<br>On the 3DS eShop It was only Avaliable for the New 3DS"+
+        "<br>Nintendo Switch Version is available on Nintendo switch Online",
         games.length
     ))
     games.push(new Game(
@@ -216,7 +226,17 @@ function populateGames(){
         "Resident Evil",
         "Available",
         [new ReviewScore(98, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(91, "Metacritic Users")],
-        "",
+        "The PS2 Version Added a new campaign called Seperate ways this is included in every Version except the GameCube version"+
+        "<br>PS2 Version is Playble on The first PS3 models Via Backwards Compatibility"+
+        "<br>The Gamecube version is Playable on the wii via Backwards Compatibility"+
+        "<br>The Wii version added motion Controls and was playable on the WiiU Via Backwards Compatibility"+
+        "<br>Resident evil 4 is on the WiiU eShop but can't be bought as the WiiU eShop was shut down"+
+        "<br>The PS3,PS4,Xbox 360,Xbox One is known as resident evil 4 HD"+
+        "<br>The PS4 version is playable on the PS5 Via Backwards Compatibility"+
+        "<br>Xbox One version is playable on the xbox series X via Backwards Compatibility"+
+        "<br>There are 2 PC versions the most recent version was called Resident evil 4 ultimate HD edition"+
+        "<br>Resident Evil 4 had a remake because of this most digital versions have been renamed to Resident Evil 4 (2005)"+
+        "<br>Resident Evil 4 is available on Steam,Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
         games.length
     ))
 
@@ -244,7 +264,8 @@ function populateGames(){
         "Blood",
         "Available",
         [new ReviewScore(82, "Metacritic"), new ReviewScore(88, "Metacritic Users")],
-        "",
+        "Blood Got a Remaster Called Blood Fresh Supply which includes two expansions"+
+        "<br>Blood Fresh Supply is available on Steam",
         games.length
     ))
     games.push(new Game(
@@ -257,7 +278,8 @@ function populateGames(){
         "",
         "Available",
         [new ReviewScore(86, "IGN"), new ReviewScore(83, "Metacritic Users")],
-        "",
+        "Shadow Warrior Got a Remaster called Shadow Warrior classic Redux which includes two expansion"+
+        "<br>Steam has Two Version of Shadow Warrior available. Shadow Warrior Classic (1997) Which is free and Shadow Warrior classic Redux",
         games.length
     ))
     games.push(new Game(
