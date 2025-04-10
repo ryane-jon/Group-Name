@@ -156,16 +156,46 @@ footer{
 }
 
 /* Game */
-#gameContent,h2{
+#gameContent h2{
     padding:10px;
 }
 
 
-#gameContent,img{
+#gameContent img{
     float:left;
     padding:10px;
 }
 
-#gameContent,h5,p,h6{
-    padding-left: 10;
+#allGame{
+    background-color:#e64833;
+    padding:10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.column{
+    background-color:#874f41;
+    width: 50%;
+    margin: 2px;
+    padding:10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.left{
+    width: 40%;
+    margin: 2px;
+    float:left;
+}
+
+.right{
+    width: 40%;
+    float:right;
+}
+
+#GameRightCol{
+    position: relative;
+    width: 43%;
+    padding:10px;
+    float:right;
 }

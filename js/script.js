@@ -372,20 +372,20 @@ function addGame(){
     htmlContent += "<h2>"+game.title+"</h2>";
     gameImgLink = game.title.split(" ").join("")
     gameImgLink = gameImgLink.replace(":","")
-    htmlContent += "<img src=images/games/"+gameImgLink+".jpg width=10%>"
+    htmlContent += "<div id =allGame ><img src=images/games/"+gameImgLink+".jpg>"
 
-    htmlContent += "<h5>"
+    htmlContent += "<div class = row><div class = column><h5>"
     htmlContent += game.gameConsole[0].title;
 
     for (i=1; i<game.gameConsole.length; i++){
         htmlContent += ", "+game.gameConsole[i].title;
     }
-    htmlContent += "<h5>"
+    htmlContent += "</h5>"
     htmlContent += "Genre: ";
     for (i=0; i<game.genre.length; i++){
         htmlContent += "<h5>"+game.genre[i]+" ";
     }
-    htmlContent += "<h5>"
+    htmlContent += "</h5>"
 
     htmlContent += "Released in <h5>"+game.year+"</h5>";
     htmlContent += "<h6>Developed by "+game.developer+"</h6>";
@@ -396,7 +396,8 @@ function addGame(){
 
         htmlContent += "<p>"+game.reviews[i].score+" from "+game.reviews[i].source+"</p>";
     }
-    htmlContent += "<p>"+game.info+"</p>";
+
+    htmlContent += "</div><div class = column><p>"+game.info+"</p></div></div></div>";
     document.getElementById("gameContent").innerHTML += htmlContent
 
 }
