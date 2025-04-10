@@ -154,3 +154,18 @@ footer{
     padding:10px;
     min-height:450px;
 }
+
+/* Game */
+#gameContent,h2{
+    padding:10px;
+}
+
+
+#gameContent,img{
+    float:left;
+    padding:10px;
+}
+
+#gameContent,h5,p,h6{
+    padding-left: 10;
+}
