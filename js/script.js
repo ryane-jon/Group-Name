@@ -453,28 +453,63 @@ function applyFilters(){
 function applyFilters(){
     games = populateGames()
     const selectedValue = document.getElementById("console").value;
-    console.log(selectedValue)
-    console.log(games[0].title)
     const items = document.querySelectorAll(".displayGames");
-    g = 0
-    items.forEach(item => {
-    if (selectedValue === "All"){
-        item.classList.remove("hidden");
-    } else {
-            item.classList.add("hidden");
-            found = false
-            for(c=0;c<games[g].gameConsole.length;c++){
-                if(games[g].gameConsole[c].title == selectedValue){
-                    console.log(games[g])
-                    console.log(games[g].gameConsole[c].title)
-                    console.log(selectedValue)
-                    item.classList.remove("hidden")
-                    found = true
+    const col = document.querySelectorAll(".col-sm")
+    const row = document.querySelectorAll(".row")
+    htmlContent = ""
+    for(i=0; i<games.length; i++){
+        console.log("first loop")
+        console.log("Game: ",games[i])
+        console.log(games[i].gameConsole)
+        for(c=0;c<games[i].gameConsole.length;c++){
+            console.log("second loop")
+            conName = games[i].gameConsole[c].title.split(" ").join("").replace(":","")
+            console.log(selectedValue)
+            console.log(conName)
+            if(conName == selectedValue){ 
+                console.log("Displays to screen")
+                console.log(games[i])
+                htmlContent = displayGame()  
+                
             }
         }
-        g++
+        
     }
-    });
 
 }
 
+// NOTE FOR SELF (KIERAN)
+
+/*
+Steps for making filters
+
+Redo displayGame() into 2 functions
+First function will display rows and cols
+Second will input the data 
+
+*/
+
+
+
+
+/*
+    items.forEach(item => {
+        if (selectedValue === "All"){
+            item.classList.remove("hidden");
+        } else {
+            item.classList.add("hidden");
+            col[g].style.display = "none"
+            row[g].style.display = "none"
+            for(c=0;c<games[g].gameConsole.length;c++){
+                conName = games[g].gameConsole[c].title.split(" ").join("").replace(":","")
+                if(conName == selectedValue){
+                    item.classList.remove("hidden")
+                    col[g].style.display = ""
+                    row[g].style.display = ""
+                    
+            }
+        }
+        g++
+        }
+    });
+*/

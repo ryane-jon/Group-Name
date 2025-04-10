@@ -111,7 +111,7 @@ footer{
     border-radius: 8px;
     border-color: black;
     width:250px;
-    height:410px;
+    height:550px;
     font-family: arial;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
@@ -139,5 +139,5 @@ footer{
 }
 
 .hidden {
-    visibility: hidden;
+    display:none;
 }
