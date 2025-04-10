@@ -366,35 +366,38 @@ function viewGame(game){
 function addGame(){
     game=getGame([localStorage.getItem("SelectedGame")]);
 
+    htmlContent = ""
+
     //display game info
-    document.getElementById("gameContent").innerHTML += "<h2>"+game.title+"</h2>";
+    htmlContent += "<h2>"+game.title+"</h2>";
     gameImgLink = game.title.split(" ").join("")
     gameImgLink = gameImgLink.replace(":","")
-    document.getElementById("gameContent").innerHTML += "<img src=images/games/"+gameImgLink+".jpg width=10%>"
+    htmlContent += "<img src=images/games/"+gameImgLink+".jpg width=10%>"
 
-    document.getElementById("gameContent").innerHTML += "<h5>"
-    document.getElementById("gameContent").innerHTML += game.gameConsole[0].title;
+    htmlContent += "<h5>"
+    htmlContent += game.gameConsole[0].title;
 
     for (i=1; i<game.gameConsole.length; i++){
-        document.getElementById("gameContent").innerHTML += ", "+game.gameConsole[i].title;
+        htmlContent += ", "+game.gameConsole[i].title;
     }
-    document.getElementById("gameContent").innerHTML += "<h5>"
- document.getElementById("gameContent").innerHTML += "Genre: ";
+    htmlContent += "<h5>"
+    htmlContent += "Genre: ";
     for (i=0; i<game.genre.length; i++){
-        document.getElementById("gameContent").innerHTML += "<h5>"+game.genre[i]+" ";
+        htmlContent += "<h5>"+game.genre[i]+" ";
     }
-    document.getElementById("gameContent").innerHTML += "<h5>"
+    htmlContent += "<h5>"
 
-    document.getElementById("gameContent").innerHTML += "Released in <h5>"+game.year+"</h5>";
-    document.getElementById("gameContent").innerHTML += "<h6>Developed by "+game.developer+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>Published by "+game.publisher+"</h6>";
-    document.getElementById("gameContent").innerHTML += "<h6>A part of "+game.series+" series</h6>";
-    document.getElementById("gameContent").innerHTML += "<p>"+game.availability+"</p>";
+    htmlContent += "Released in <h5>"+game.year+"</h5>";
+    htmlContent += "<h6>Developed by "+game.developer+"</h6>";
+    htmlContent += "<h6>Published by "+game.publisher+"</h6>";
+    htmlContent += "<h6>A part of "+game.series+" series</h6>";
+    htmlContent += "<p>"+game.availability+"</p>";
     for (i=0; i<game.reviews.length;i++){
 
-        document.getElementById("gameContent").innerHTML += "<p>"+game.reviews[i].score+" from "+game.reviews[i].source+"</p>";
+        htmlContent += "<p>"+game.reviews[i].score+" from "+game.reviews[i].source+"</p>";
     }
-    document.getElementById("gameContent").innerHTML += "<p>"+game.info+"</p>";
+    htmlContent += "<p>"+game.info+"</p>";
+    document.getElementById("gameContent").innerHTML += htmlContent
 
 }
 
