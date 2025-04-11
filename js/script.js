@@ -169,7 +169,7 @@ function populateGames(){
         "<br>The 3DS version is Know As Metal Gear Solid: Snake Eater 3D is also Playable on New 3ds"+
         "<br>The 3DS version was on the 3DS eShop but can't be bought as the 3DS eShop was Shut down"+
         "<br>The PS4,PS5,Xbox Series X,Nintendo Switch and PC Versions are available via Metal Gear Solid: Master Collection vol 1"+
-        "<br>Metal Gear Solid 3 is available on Steam,Xbox Games Store and Playstation Store",
+        "<br>Metal Gear Solid 3 is available on Steam, Xbox Games Store, Playstation Store and The Nintendo Switch eShop",
         "Set in 1964, 31 years before the events of the original Metal Gear, the story centers on the FOX operative codenamed Naked Snake as he attempts to rescue Russian rocket scientist Nikolai Stepanovich Sokolov, sabotage an experimental superweapon, and assassinate his defected former boss.",
         games.length
     ));
@@ -246,7 +246,7 @@ function populateGames(){
         "<br>Xbox One version is playable on the xbox series X via Backwards Compatibility"+
         "<br>There are 2 PC versions the most recent version was called Resident evil 4 ultimate HD edition"+
         "<br>Resident Evil 4 had a remake because of this most digital versions have been renamed to Resident Evil 4 (2005)"+
-        "<br>Resident Evil 4 is available on Steam,Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
+        "<br>Resident Evil 4 is available on Steam, Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
         "Players control the special agent Leon S. Kennedy on a mission to rescue the US president's daughter, Ashley Graham, who has been kidnapped by a religious cult in rural Spain.",
         games.length
     ))
@@ -262,7 +262,13 @@ function populateGames(){
         "The Elder Scrolls",
         "Available",
         [new ReviewScore(95, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
-        "",
+        "Skyrim has 3 version on PC these are called The Elder Scrolls V: Skyrim, The Elder Scrolls V: Skyrim - Special Edition and The Elder Scrolls V: Skyrim Anniversary Edition"
+        +"<br>The PS4 and Xbox one versions is known as The Elder Scrolls V: Skyrim - Special Edition"
+        +"<br>The PS4 version is playable on the PS5 Via Backwards Compatibility"
+        +"<br>Xbox One version is playable on the xbox series X via Backwards Compatibility"
+        +"<br>The xbox series X and PS5 Version is known as The Elder Scrolls V: Skyrim Anniversary Edition"
+        +"<br>The alexa version is called Skyrim Very Special Edition"
+        +"<br>The Elder Scrolls V: Skyrim is available on Steam,Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
         "The game is set 200 years after the events of Oblivion and takes place in Skyrim, the northernmost province of Tamriel, a continent on the planet Nirn. Its main story focuses on the player character, the Dragonborn, on their quest to defeat Alduin the World-Eater, a dragon prophesied to destroy the world. ",
         games.length
     ))
@@ -306,7 +312,15 @@ function populateGames(){
         "Duke Nukem",
         "Available",
         [new ReviewScore(85, "IGN"), new ReviewScore(80, "Metacritic Users")],
-        "",
+        "The N64 Version was call Duke Nukem 64. this version has slightly altered levels, new weapons, no music and was censored to remove any drug and sex refrences"
+        +"<br>The Sega Genesis version had simplified graphics and only containted episode 2"
+        +"<br>The xbox 360 version has a rewind feature and has modified music"
+        +"<br>The PS3 and PS vita versions is known as Duke Nukem 3D: Megaton Edition"
+        +"<br>Duke Nukem 3D: Megaton Edition also included three expansion used to be on Steam but was removed in 2016"
+        +"<br>Steam Also had another version called Duke Nukem Kill-a-Ton 2015 Collection this was removed in 2015"
+        +"<br>The PS4, Xbox one and nintendo Switch versions is know as Duke Nukem 3D: 20th Anniversary World Tour"
+        +"<br>Duke Nukem 3D: 20th Anniversary World Tour is currently the only version available on steam it also added a new episode but didn't include any of the expansions"
+        +"<br>Duke Nukem 3D is available on Steam, Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
         "Duke Nukem 3D features the adventures of the titular Duke Nukem, voiced by Jon St. John, who fights against an alien invasion on Earth.",
         games.length
     ))
@@ -320,7 +334,15 @@ function populateGames(){
         "Doom",
         "Available",
         [new ReviewScore(80, "IGN"), new ReviewScore(85, "Metacritic Users")],
-        "",
+        "The Snes version has 5 levels missing from episode 1-3"
+        +"<br>The PS1 Version has 28 levels from episode 1-4, 23 levels from Doom II and 7 original levels. It also has different music"
+        +"<br>The Game Boy advance version has missing levels and some censorship"
+        +"<br>Playable on Xbox via Doom 3: Collector's Edition it also contains 2 exclusive levels"
+        +"<br>The Xbox 360 version was digital only"
+        +"<br>The PS3 Version was know as Classic Complete"
+        +"<br>The PS4,Xbox One and Nintedo Switch has 2 versions The First is called Doom 1993 the 2nd is called Doom + Doom II"
+        +"<br> Doom + Doom II is also on Xbox Series X, PS5 and PC. This is the current version of the Game"
+        +"<br>Doom is available on Steam, Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
         "The player assumes the role of a space marine, later unofficially referred to as Doomguy, fighting through hordes of undead humans and invading demons. The game begins on the moons of Mars and finishes in hell, with the player traversing each level to find its exit or defeat its final boss.",
         games.length
     ))
