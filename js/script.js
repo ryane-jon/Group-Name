@@ -1,5 +1,5 @@
 //Game Constructor
-function Game(title, gameConsole, genre, year, developer, publisher, series, availability, reviews,info, id) {
+function Game(title, gameConsole, genre, year, developer, publisher, series, availability, reviews,info,summary, id) {
     this.title = title; // The title of the game -- String
     this.gameConsole = gameConsole; // The gameConsole(s) that the game is on -- Array of String
     this.genre = genre; // The genre -- Array of String
@@ -9,6 +9,7 @@ function Game(title, gameConsole, genre, year, developer, publisher, series, ava
     this.series = series; // The series the game is a part of (if any) -- String
     this.availability = availability; // is the game still available to buy -- String -- "Available", "Overpriced", "Partial", "Unavailable" etc
     this.reviews = reviews // the existing reviews for this game -- Array of ReviewScore
+    this.summary=summary// summary of game
     this.info= info// info about the games ports
     this.id = id; // self explanitory -- int
 }
@@ -89,6 +90,7 @@ function populateGames(){
         "The Wii version is playable on the WiiU via Backwards Compatibility"+
         "<br>Super Mario Galaxy is on the Wii, and WiiU eShop but can't be bought as those eShops were shut down"+
         "<br>Playable on the Switch via Super Mario 3D all-stars and was only available for a 6 months",
+        "As Mario, the player embarks on a quest to rescue Princess Peach and save the universe from Bowser",
         games.length
     ))
     games.push(new Game(
@@ -102,6 +104,7 @@ function populateGames(){
         [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(85, "Metacritic Users")],
         "The PS4 and Xbox one Versions added a first Person Camera Option this was included in every other version except PS3 and xbox 360"+
         "<br>Grand Theft Auto V is available on Steam,Xbox Games Store and Playstation Store",
+        "The single-player story follows three protagonists-retired bank robber Michael De Santa (Ned Luke), street gangster Franklin Clinton (Shawn Fonteno), and drug dealer and gunrunner Trevor Philips (Steven Ogg), and their attempts to commit heists while under pressure from a corrupt government agency and powerful criminals.",
         games.length
     ))
     games.push(new Game(
@@ -115,6 +118,7 @@ function populateGames(){
         "Available",
         [new ReviewScore(85, "IGN"), new ReviewScore(73, "Metacritic"), new ReviewScore(71, "Metacritic Users")],
         "Rainbow Six Siege is available on Steam,Xbox Games Store and Playstation Store",
+        "Each player assumes control of an attacker or a defender in different gameplay modes such as rescuing a hostage, defusing a bomb, or taking control of an objective within a room.",
         games.length
     ))
     games.push(new Game(
@@ -128,6 +132,7 @@ function populateGames(){
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(97, "Metacritic"), new ReviewScore(89, "Metacritic Users")],
         "Super Mario Odyssey is available on the Nintendo Switch eShop",
+        "It follows Mario and his new ally Cappy-a sentient hat-as they journey across various kingdoms to save Princess Peach from Mario's nemesis Bowser's plans of forced marriage.",
         games.length
     )) 
     games.push(new Game(
@@ -141,6 +146,7 @@ function populateGames(){
         "Available",
         [new ReviewScore(100, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(82, "Metacritic Users")],
         "Elden Ring is available on Steam,Xbox Games Store and Playstation Store",
+        "Set in the Lands Between, players control a customizable player character on a quest to repair the Elden Ring and become the new Elden Lord.",
         games.length
     )) 
     
@@ -162,8 +168,9 @@ function populateGames(){
         "<br>The Xbox 360 version Is playable on Xbox One And Xbox Series X via Backwards Compatibility"+
         "<br>The 3DS version is Know As Metal Gear Solid: Snake Eater 3D is also Playable on New 3ds"+
         "<br>The 3DS version was on the 3DS eShop but can't be bought as the 3DS eShop was Shut down"+
-        "<br>The PS4,PS5,Xbox Series X,Nintendo Switch and PC Versions are available via Metal Gear Solid: Master Collection vol 1",
+        "<br>The PS4,PS5,Xbox Series X,Nintendo Switch and PC Versions are available via Metal Gear Solid: Master Collection vol 1"+
         "<br>Metal Gear Solid 3 is available on Steam,Xbox Games Store and Playstation Store",
+        "Set in 1964, 31 years before the events of the original Metal Gear, the story centers on the FOX operative codenamed Naked Snake as he attempts to rescue Russian rocket scientist Nikolai Stepanovich Sokolov, sabotage an experimental superweapon, and assassinate his defected former boss.",
         games.length
     ));
     games.push(new Game(
@@ -179,8 +186,9 @@ function populateGames(){
         "Playable on Gamecube via The Legend of Zelda: Collector's Edition"+
         "<br>Playable on Gameboy advance via Classic Nes Series: The Legend of Zelda"+
         "<br>The Lengend of zelda is on The Nintendo Wii, Wii U, Nintendo 3DS eShops but can't be bought as those eShops were shut down"+
-        "<br>3DS Version is Playble on The New Nintendo 3DS"+
+        "<br>3DS Version is Playable on The New Nintendo 3DS"+
         "<br>Nintendo Switch Version is available on Nintendo switch Online",
+        "It is set in the fantasy land of Hyrule and centers on an elf-like boy named Link, who aims to collect the eight fragments of the Triforce of Wisdom to rescue Princess Zelda from Ganon.",
         games.length
     ))
     games.push(new Game(
@@ -199,6 +207,7 @@ function populateGames(){
         [new ReviewScore(95, "IGN"), new ReviewScore(91, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
         "can be played on DSi,3DS,New 3DS Via Backwards Compatibility"+
         "<br>Wii U version is on the WiiU eShop but can't be bought as The WiiU eShop was shut down",
+        "Mario Kart DS features characters from the Mario series and pits them against each other as they race in karts on tracks based on locations in the Mario series.",
         games.length
     ))
     games.push(new Game(
@@ -214,6 +223,7 @@ function populateGames(){
         "Super Metroid is on the Wii,WiiU and 3DS eShop but can't be bought as the eShop was shut down"+
         "<br>On the 3DS eShop It was only Avaliable for the New 3DS"+
         "<br>Nintendo Switch Version is available on Nintendo switch Online",
+        "The player controls bounty hunter Samus Aran, who travels to planet Zebes to retrieve an infant Metroid creature stolen by the Space Pirate leader Ridley.",
         games.length
     ))
     games.push(new Game(
@@ -237,6 +247,7 @@ function populateGames(){
         "<br>There are 2 PC versions the most recent version was called Resident evil 4 ultimate HD edition"+
         "<br>Resident Evil 4 had a remake because of this most digital versions have been renamed to Resident Evil 4 (2005)"+
         "<br>Resident Evil 4 is available on Steam,Xbox Games Store,Playstation Store and The Nintendo Switch eShop",
+        "Players control the special agent Leon S. Kennedy on a mission to rescue the US president's daughter, Ashley Graham, who has been kidnapped by a religious cult in rural Spain.",
         games.length
     ))
 
@@ -252,6 +263,7 @@ function populateGames(){
         "Available",
         [new ReviewScore(95, "IGN"), new ReviewScore(96, "Metacritic"), new ReviewScore(86, "Metacritic Users")],
         "",
+        "The game is set 200 years after the events of Oblivion and takes place in Skyrim, the northernmost province of Tamriel, a continent on the planet Nirn. Its main story focuses on the player character, the Dragonborn, on their quest to defeat Alduin the World-Eater, a dragon prophesied to destroy the world. ",
         games.length
     ))
     games.push(new Game(
@@ -266,6 +278,7 @@ function populateGames(){
         [new ReviewScore(82, "Metacritic"), new ReviewScore(88, "Metacritic Users")],
         "Blood Got a Remaster Called Blood Fresh Supply which includes two expansions"+
         "<br>Blood Fresh Supply is available on Steam",
+        "The game follows the story of Caleb, an undead early 20th century gunslinger seeking revenge against the demon Tchernobog.",
         games.length
     ))
     games.push(new Game(
@@ -280,6 +293,7 @@ function populateGames(){
         [new ReviewScore(86, "IGN"), new ReviewScore(83, "Metacritic Users")],
         "Shadow Warrior Got a Remaster called Shadow Warrior classic Redux which includes two expansion"+
         "<br>Steam has Two Version of Shadow Warrior available. Shadow Warrior Classic (1997) Which is free and Shadow Warrior classic Redux",
+        " Lo Wang finds he can no longer stomach Zilla's evil and quits his job. Master Zilla soon realizes the threat that Lo Wang poses and orders the creatures to kill him. Forced to fight for his life, Lo Wang manages to slaughter dozens of Zilla's minions until he discovers that Zilla also had his old mentor, Master Liep, murdered. Following his mentor's dying words, Lo swears to put an end to Zilla's schemes.",
         games.length
     ))
     games.push(new Game(
@@ -293,6 +307,7 @@ function populateGames(){
         "Available",
         [new ReviewScore(85, "IGN"), new ReviewScore(80, "Metacritic Users")],
         "",
+        "Duke Nukem 3D features the adventures of the titular Duke Nukem, voiced by Jon St. John, who fights against an alien invasion on Earth.",
         games.length
     ))
     games.push(new Game(
@@ -306,6 +321,7 @@ function populateGames(){
         "Available",
         [new ReviewScore(80, "IGN"), new ReviewScore(85, "Metacritic Users")],
         "",
+        "The player assumes the role of a space marine, later unofficially referred to as Doomguy, fighting through hordes of undead humans and invading demons. The game begins on the moons of Mars and finishes in hell, with the player traversing each level to find its exit or defeat its final boss.",
         games.length
     ))
     return games;
@@ -372,32 +388,37 @@ function addGame(){
     htmlContent += "<h2>"+game.title+"</h2>";
     gameImgLink = game.title.split(" ").join("")
     gameImgLink = gameImgLink.replace(":","")
-    htmlContent += "<div id =allGame ><img src=images/games/"+gameImgLink+".jpg>"
+    htmlContent += "<div id =allGame><img src=images/games/"+gameImgLink+".jpg>"
 
-    htmlContent += "<div class = row><div class = column><h5>"
+    htmlContent += "<div class = row><div class = col-sm><h5>"
+    htmlContent +="Console:<br>"
     htmlContent += game.gameConsole[0].title;
 
     for (i=1; i<game.gameConsole.length; i++){
         htmlContent += ", "+game.gameConsole[i].title;
     }
     htmlContent += "</h5>"
-    htmlContent += "Genre: ";
+    htmlContent += "<h6>"+game.availability+"</h6>";
+    htmlContent += "<h5>Genre: </h5>";
     for (i=0; i<game.genre.length; i++){
         htmlContent += "<h5>"+game.genre[i]+" ";
     }
     htmlContent += "</h5>"
 
-    htmlContent += "Released in <h5>"+game.year+"</h5>";
-    htmlContent += "<h6>Developed by "+game.developer+"</h6>";
-    htmlContent += "<h6>Published by "+game.publisher+"</h6>";
+    htmlContent += "<h5>Released in: </h5> <h5>"+game.year+"</h5>";
+    htmlContent += "<h6>Developer: "+game.developer+"</h6>";
+    htmlContent += "<h6>Publisher: "+game.publisher+"</h6>";
     htmlContent += "<h6>A part of "+game.series+" series</h6>";
-    htmlContent += "<p>"+game.availability+"</p>";
+     htmlContent += "<h5>External Reviews: </h5>"
     for (i=0; i<game.reviews.length;i++){
 
         htmlContent += "<p>"+game.reviews[i].score+" from "+game.reviews[i].source+"</p>";
     }
 
-    htmlContent += "</div><div class = column><p>"+game.info+"</p></div></div></div>";
+    htmlContent += "</div><div class = col-sm><h5> Summary: </h5>";
+    htmlContent +="<p>"+game.summary+"</p>"
+    htmlContent +="<h5> Game Info: </h5>"
+    htmlContent += "<p>"+game.info+"</p></div></div></div>"
     document.getElementById("gameContent").innerHTML += htmlContent
 
 }

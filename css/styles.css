@@ -163,24 +163,32 @@ footer{
 
 #gameContent img{
     float:left;
-    padding:10px;
-}
-
-#allGame{
-    background-color:#e64833;
-    padding:10px;
-    border-radius: 15px;
+    margin:10px;
+    size: relative;
+    width: 15%;
+    height:fit-content;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
-.column{
+#allGame{
     background-color:#874f41;
+    padding:10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    height: 600px
+}
+
+
+#allGame .col-sm {
+    background-color:rgb(2, 88, 88);
     width: 50%;
     margin: 2px;
     padding:10px;
     border-radius: 15px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    
+    
 }
 .left{
     width: 40%;
