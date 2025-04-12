@@ -176,7 +176,7 @@ footer{
     padding:10px;
     border-radius: 15px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    height: 600px
+    height: auto
 }
 
 
@@ -206,4 +206,11 @@ footer{
     width: 43%;
     padding:10px;
     float:right;
+}
+#review{
+    background-color:rgb(2, 88, 88);;
+    padding:10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    width: auto
 }

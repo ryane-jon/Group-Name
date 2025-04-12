@@ -36,6 +36,13 @@ function ReviewScore(score, source) {
     this.source = source; // The source of the review -- String -- "metacritic", "IGN" etc
 }
 
+function UserReview(username,score,reviewText,gameTitle){
+    this.username=username
+    this.score=score
+    this.reviewText=reviewText
+    this.gameTitle=gameTitle
+}
+
 //populates gameConsoles (also used to get and return in place of would-be database)
 function populateGameConsoles(){
     let gameConsoles = [];
@@ -349,7 +356,165 @@ function populateGames(){
     return games;
 }
 
+// populates user reviews(would be stored in a database)
+function populateUserReviews(){
+    let userReviews =[];
+    userReviews.push(new UserReview(
+        "Ding20",
+        90,
+        "I enjoy this game and love the structure of the galaxies.I also really like the level design and attention to details.",
+        "Super Mario Galaxy"
+    ))
 
+    userReviews.push(new UserReview(
+        "Ding20",
+        80,
+        "The story for this game is amazing and love the different playable characters, Online just as good will amazing depth to what can be done, however f*ck the guy on the flying bike with missiles.",
+        "Grand Theft Auto V"
+    ))
+
+    userReviews.push(new UserReview(
+        "Ding20",
+        30,
+        "If you enjoy getting shot through every wall in a room mid explosion, then this game is perfect for you",
+        "Rainbow Six Siege"
+    ))
+
+    userReviews.push(new UserReview(
+        "Prisonerflake",
+        90,
+        "As a completionist I love this game, great world designs, amazing soundtrack with plenty of replayability and a good DLC, only complaint I could have is that the worlds aren’t big enough for me.",
+        "Super Mario Odyssey"
+    ))
+
+    userReviews.push(new UserReview(
+        "Ding20",
+        0,
+        "Game too hard",
+        "Elden Ring"
+    ))
+
+    userReviews.push(new UserReview(
+        "Prisonerflake",
+        50,
+        "Second that ",
+        "Elden Ring"
+    ))
+       
+    userReviews.push(new UserReview(
+        "Padlowan",
+        70,
+        "Too easy but really good lore",
+        "Elden Ring"
+    ))
+
+    userReviews.push(new UserReview(
+        "Padlowan",
+        80,
+        "This is the moment the naked snake became the big boss",
+        "Metal Gear Solid 3: Snake Eater"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        100,
+        "The game Has a Crocodile hat",
+        "Metal Gear Solid 3: Snake Eater"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        60,
+        "Need a guide for this game",
+        "The Legend of Zelda"
+    ))
+    userReviews.push(new UserReview(
+        "Ding20",
+        70,
+        "Fun game with plenty of well-made tracks, I just wish rainbow road was easier :(",
+        "Mario Kart DS"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        90,
+        "Best mario kart",
+        "Mario Kart DS"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        100,
+        "Great Atmosphere and exploration",
+        "Super Metroid"
+    ))
+
+    userReviews.push(new UserReview(
+        "Prisonerflake",
+        100,
+        "What did Leon mean he said the bingo line",
+        "Resident Evil 4"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        100,
+        "\"Your right hand comes off?\"",
+        "Resident Evil 4"
+    ))
+    userReviews.push(new UserReview(
+        "Obisdian-fan",
+        10,
+        "Todd said you can climb the mountains",
+        "The Elder Scrolls V: Skyrim"
+    ))
+    userReviews.push(new UserReview(
+        "Padlowan",
+        100,
+        "Spend weeks downloading hundreds of mods and then play for 10 minutes",
+        "The Elder Scrolls V: Skyrim"
+    ))
+    userReviews.push(new UserReview(
+        "Ralof",
+        80,
+        "I\'m finally awake",
+        "The Elder Scrolls V: Skyrim"
+    ))
+    userReviews.push(new UserReview(
+        "Padlowan",
+        100,
+        "I love boomer shooters where the protagonist is too angry to die",
+        "Blood"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        70,
+        "Greasy Randy worked on this game so that makes it lose some points",
+        "Shadow Warrior"
+    ))
+    userReviews.push(new UserReview(
+        "Padlowan",
+        80,
+        "Crazy good level design. Juxtaposition between a serious alien invasion and Dukey Nukey’s ridiculous character is hilarious.",
+        "Duke Nukem 3D"
+    ))
+    userReviews.push(new UserReview(
+        "Padlowan",
+        80,
+        "It can run on my smart fridge",
+        "DOOM"
+    ))
+    userReviews.push(new UserReview(
+        "Civvie",
+        80,
+        "Weirdly shaped rooms haphazardly strewn together",
+        "DOOM"
+    ))
+    userReviews.push(new UserReview(
+        "ThompsonThompson",
+        80,
+        "I can run this on a pdf file",
+        "DOOM"
+    ))
+
+
+    return userReviews;   
+}
 
 //get games
 //get one game from a nonspecific term
@@ -403,7 +568,7 @@ function viewGame(game){
 
 function addGame(){
     game=getGame([localStorage.getItem("SelectedGame")]);
-
+    uReviews=populateUserReviews();
     htmlContent = ""
 
     //display game info
@@ -441,6 +606,24 @@ function addGame(){
     htmlContent +="<p>"+game.summary+"</p>"
     htmlContent +="<h5> Game Info: </h5>"
     htmlContent += "<p>"+game.info+"</p></div></div></div>"
+    htmlContent += "<br><div id = allgame><h2>User Reviews</h2>"
+
+    content = false;
+    for(i= 0 ;i<uReviews.length;i++){
+        if(game.title == uReviews[i].gameTitle){
+            content = true
+            htmlContent +="<div id = review>"
+            htmlContent += "<h5>"+uReviews[i].username+"<h5/>"
+            htmlContent += "<h5>Score: "+uReviews[i].score+"/100</h5>"
+            htmlContent += "<p>"+uReviews[i].reviewText+"</p>"
+            htmlContent +="</div><br>"
+        }
+            
+    }
+    if(!content){
+        htmlContent +="<h2>This Game Doesn't have any reviews"
+    }
+    htmlContent +="<\div>"
     document.getElementById("gameContent").innerHTML += htmlContent
 
 }
