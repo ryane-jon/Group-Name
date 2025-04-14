@@ -791,3 +791,23 @@ Second will input the data
         }
     });
 */
+
+/* Login Page Scripts */
+
+function loginFunctionality() {
+    var form = document.getElementById("loginForm");
+    var errorMessage = document.getElementById("errorMessage");
+  
+    form.addEventListener("submit", function (prevention) {
+      prevention.preventDefault();
+  
+      var username = document.getElementById("username").value.trim();
+      var password = document.getElementById("password").value;
+  
+      if (username === "admin" && password === "admin") {
+        window.location.href = "profile.html";
+      } else {
+        errorMessage.style.display = "block";
+      }
+    });
+  }
