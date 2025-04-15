@@ -535,7 +535,7 @@ function populateUsers(){
     ))
 
     users.push(new User(
-        "Palowan",
+        "Padlowan",
         "pass",
         "PadlowanPotionsLtd@gmail.com",
         true,
