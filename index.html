@@ -12,10 +12,11 @@
         </header>
         <nav>
             <ul>
-                <li>Popular</li>
-                <li>Genres</li>
-                <li>Platforms</li>
-                <li><a href="login.html">Log in</a></li>
+                <li id = login>
+                    <script>
+                        navBar()
+                    </script>
+                    </li>
                 <li><a href ="all_games.html"onclick="localStorage.setItem('searchTerm','');localStorage.setItem('platformFilter','NONE')">All Games</a></li>
                 <li>
                     <form id="search" action="all_games.html">
@@ -26,6 +27,9 @@
             </ul>
         </nav>
         <section class="genericSection">
+            <p id="indexText">Welcome to GroupGame, the place to find everything you need to know about a game. Whether it's what console it's on, or if it would suit you, we have you covered!</p>
+            <p id="indexText">GroupGame is even better with our subscription. With our subscription service you'll be able to customise your profile, favourite games and even write your own reviews on the games.</p>
+
             <section id="platforms">
                 <script>displayPlatforms()</script>
             </section>
