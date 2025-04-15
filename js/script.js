@@ -534,6 +534,14 @@ function populateUsers(){
         users.length
     ))
 
+    users.push(new User(
+        "Palowan",
+        "pass",
+        "PadlowanPotionsLtd@gmail.com",
+        true,
+        users.length
+    ))
+
     return users;
 }
 
