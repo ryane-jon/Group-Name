@@ -737,6 +737,33 @@ function displayGame(){
     document.getElementById("gameDescription").innerHTML = htmlContent
 }
 
+// Index Page DisplayGame() function
+
+function indexDisplayGame() {
+    games = populateGames()
+    htmlContent = "<h3>Trending Games: </h3>"
+    htmlContent += "<div class = row>"
+    for(i=0; i<4;){    
+            if (games[i]!=null){
+                gameImgLink = games[i].title.split(" ").join("")
+                gameImgLink = gameImgLink.replace(":","")
+                htmlContent += "<div class = col-sm> <div class = displayGames id = gameImgLink><button id = gameButton onclick=viewGame(games["+i+"].title)> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px>";
+                htmlContent += "<h6>"+games[i].title+"</h6>"
+                htmlContent += "<p>"+getConsoleStr(games[i])+"</p>"
+                htmlContent += "<p>Release Date: "+games[i].year+
+                    "</p><p>Genre: "+games[i].genre+
+                    "</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></button></div></div>";
+                i++;
+            } else {
+                htmlContent += "<div class = col-sm></div>"
+            }
+        }
+        htmlContent += "</div>"
+    
+    //htmlContent += "</div>"
+    document.getElementById("games").innerHTML = htmlContent
+}
+
 /* Login Page Scripts */
 
 function loginFunctionality() {
