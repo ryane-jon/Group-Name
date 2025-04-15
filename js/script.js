@@ -566,14 +566,12 @@ function getGamesName(name){
 
 //get a list of games from console
 function getGamesConsole(gameConsoleId){
-    console.log("----GAMES FOR "+populateGameConsoles()[gameConsoleId].title)
     games = populateGames();
     result = [];
     for(i=0; i<games.length; i++){
         for(j=0; j<games[i].gameConsole.length; j++){
             if (games[i].gameConsole[j].id==parseInt(gameConsoleId)){
                 result.push(games[i].title)
-                console.log(games[i].title)
                 break
             }
         }
@@ -652,9 +650,18 @@ function addGame(){
 //Go through each console and display it on the page
 function displayPlatforms(){
     consoles = populateGameConsoles();
+    //display each platform
     for (i = 0; i<consoles.length; i++){
-        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' onclick='getGamesConsole("+consoles[i].id+")' class='platformLogo'>";
+        document.getElementById("platforms").innerHTML +="<img src='images/platformLogos/"+consoles[i].title+".jpg' onclick='filterPlatformByID("+consoles[i].id+")' class='platformLogo'>";
     }
+}
+
+function filterPlatformByID(id){
+    localStorage.setItem("platformFilter", id);
+    localStorage.setItem("searchTerm", "");
+
+    window.location.href = "all_games.html";
+
 }
 
 //Get the average review for a game
@@ -683,6 +690,7 @@ function getConsoleStr(game){
 }
 
 function displayGame(){
+    htmlContent = "";
     if(localStorage.getItem("searchTerm").length>0){
         games = getGamesName(localStorage.getItem("searchTerm"))
         document.getElementById("searchBox").value=localStorage.getItem("searchTerm");
@@ -692,6 +700,7 @@ function displayGame(){
         }
 
     if(localStorage.getItem("platformFilter")!="NONE"){
+
         let gamesTemp = [];
         for(i=0;i<games.length;i++){
             for(c=0;c<games[i].gameConsole.length;c++){
@@ -701,8 +710,9 @@ function displayGame(){
             }
         }
         games=gamesTemp;
+        htmlContent+="<h3>Games for "+populateGameConsoles()[localStorage.getItem("platformFilter")].title+"</h3>";
     }
-    htmlContent = "";
+    
     //htmlContent +="<div id=img-gallery class = container>"
     for(i=0; i<games.length;){
         htmlContent += "<div class = row>"
