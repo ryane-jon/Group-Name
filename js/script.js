@@ -817,6 +817,11 @@ function loginFunctionality() {
     user =localStorage.getItem("username")
     document.getElementById("username").innerHTML ="<h3>"+user+"</h3>"
   }
+
+  function logout(){
+    localStorage.clear("username")
+    window.location.href =" index.html"
+  }
 // Get games based on a search term
 function searchGame(){
     term= document.getElementById("searchBox").value;
@@ -824,6 +829,13 @@ function searchGame(){
     displayGame();
 }
 
+function navBar(){
+    if(localStorage.getItem("username")==null){
+        document.getElementById("login").innerHTML ="<a href=login.html>Log in</a>"
+    }else{
+        document.getElementById("login").innerHTML ="<a href=Profile.html>Profile</a>"
+    }
+}
 //filter games
 function populateConsoleFilter(){
     platforms=populateGameConsoles();

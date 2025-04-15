@@ -15,7 +15,11 @@
                 <li>Popular</li>
                 <li>Genres</li>
                 <li>Platforms</li>
-                <li><a href="login.html">Log in</a></li>
+                <li id = login>
+                    <script>
+                        navBar()
+                    </script>
+                    </li>
                 <li><a href ="all_games.html"onclick="localStorage.setItem('searchTerm','');localStorage.setItem('platformFilter','NONE')">All Games</a></li>
                 <li>
                     <form id="search" action="all_games.html">
