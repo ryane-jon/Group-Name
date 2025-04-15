@@ -20,6 +20,11 @@ header{
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+#indexText{
+    margin-left: 16px;
+    font-size: 18px;
+}
+
 nav{
     float:right;
     width:60%;
