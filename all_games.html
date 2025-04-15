@@ -18,7 +18,7 @@
                 <li>Genres</li>
                 <li>Platforms</li>
                 <li><a href="login.html">Log in</a></li>
-                <li><a href ="all_games.html"onclick="localStorage.setItem('searchTerm','')">All Games</a></li>
+                <li><a href ="all_games.html"onclick="localStorage.setItem('searchTerm','');localStorage.setItem('platformFilter','NONE')">All Games</a></li>
                 <li>
                     <form id="search" action="all_games.html" onkeyup="searchGame()">
                         <textarea id="searchBox" rows="1" placeholder="search"></textarea>
@@ -28,19 +28,18 @@
             </ul>
         </nav>
         <section class = "genericSection">
-            <p>Filters:</p>
-            <ul>
-                <li><form id="filters">
-                    <select id = "console" name="console">
-                    </select>
-                </form></li>
-            </ul>
+            <form>
+                <select id="platformFilter">
+                    <option selected value="NONE">No Console Filter</option>
+                    <script>populateConsoleFilter()</script>
+                </select>
+                <button onclick="applyFilters()">Apply filters</button>
+                <button onclick="clearFilters()">Clear filters</button>
+            </form>
             <section id="gameDescription">
                     <script>
                         displayGame();
                     </script>             
-                        
-    
             </section>
         </section>
         

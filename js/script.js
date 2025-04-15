@@ -690,6 +690,18 @@ function displayGame(){
     else{
          games = populateGames()
         }
+
+    if(localStorage.getItem("platformFilter")!="NONE"){
+        let gamesTemp = [];
+        for(i=0;i<games.length;i++){
+            for(c=0;c<games[i].gameConsole.length;c++){
+                if(games[i].gameConsole[c].id==localStorage.getItem("platformFilter")){
+                    gamesTemp.push(games[i])
+                }
+            }
+        }
+        games=gamesTemp;
+    }
     htmlContent = "";
     //htmlContent +="<div id=img-gallery class = container>"
     for(i=0; i<games.length;){
@@ -740,4 +752,23 @@ function searchGame(){
     term= document.getElementById("searchBox").value;
     localStorage.setItem("searchTerm", term);
     displayGame();
+}
+
+//filter games
+function populateConsoleFilter(){
+    platforms=populateGameConsoles();
+    console.log()
+    for(c=0;c<platforms.length;c++){
+            if(platforms[c].id.toString()==localStorage.getItem("platformFilter")) document.getElementById("platformFilter").innerHTML+="<option selected value="+platforms[c].id+">"+platforms[c].title+"</option>";
+            else document.getElementById("platformFilter").innerHTML+="<option value="+platforms[c].id+">"+platforms[c].title+"</option>";
+            
+    }
+}
+
+function applyFilters(){
+    localStorage.setItem("platformFilter", document.getElementById("platformFilter").value);
+}
+
+function clearFilters(){
+    localStorage.setItem("platformFilter", "NONE");
 }
