@@ -23,10 +23,10 @@ function GameConsole(title, availability, id){
 
 //User Constructor
 function User(username, password, email, subsctiption, id) {
-    username = this.username; // String
-    password = this.password; // String
-    email = this.email; // String
-    subsctiption = this.subsctiption; // boolean
+    this.username = username; // String
+    this.password = password; // String
+    this.email = email; // String
+    this.subsctiption = subsctiption; // boolean
     this.id = id
 }
 
@@ -516,6 +516,27 @@ function populateUserReviews(){
     return userReviews;   
 }
 
+function populateUsers(){
+    let users = []
+    users.push(new User(
+        "Ding20",
+        "pass",
+        "ding@gmail.com",
+        true,
+        users.length
+    ))
+
+    users.push(new User(
+        "ThompsonThompson",
+        "pass",
+        "ThomnpsonThompson@gmail.com",
+        true,
+        users.length
+    ))
+
+    return users;
+}
+
 //get games
 //get one game from a nonspecific term
 function getGame(term){
@@ -769,21 +790,33 @@ function indexDisplayGame() {
 function loginFunctionality() {
     var form = document.getElementById("loginForm");
     var errorMessage = document.getElementById("errorMessage");
-  
+    users = populateUsers();
+    foundUserName = false
     form.addEventListener("submit", function (prevention) {
       prevention.preventDefault();
   
       var username = document.getElementById("username").value.trim();
       var password = document.getElementById("password").value;
-  
-      if (username === "admin" && password === "admin") {
-        window.location.href = "profile.html";
-      } else {
+
+      for(i=0;i<users.length;i++){
+        if (username == users[i].username && password == users[i].password) {
+            foundUserName = true
+            localStorage.setItem("username",users[i].username)
+            window.location.href = "profile.html";
+            
+        }
+      } 
+      if(foundUserName == false){
         errorMessage.style.display = "block";
       }
+
     });
   }
 
+  function profile(){
+    user =localStorage.getItem("username")
+    document.getElementById("username").innerHTML ="<h3>"+user+"</h3>"
+  }
 // Get games based on a search term
 function searchGame(){
     term= document.getElementById("searchBox").value;
