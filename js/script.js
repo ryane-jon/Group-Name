@@ -538,8 +538,28 @@ function getGame(term){
 //get a list of games from name
 function getGamesName(name){
     result = [];
+    games = populateGames();
+    //name equal
     for(i=0; i<games.length; i++){
-        if(games[i].title.toLowerCase().includes(name.toString().toLowerCase())) result.push(games[i]);
+        if(games[i].title.toLowerCase()==name.toString().toLowerCase() & !result.includes(games[i])) result.push(games[i]);
+    }
+    //name includes search term
+    for(i=0; i<games.length; i++){
+        if(games[i].title.toLowerCase().includes(name.toString().toLowerCase()) & !result.includes(games[i])) result.push(games[i]);
+    }
+    //console equal or includes
+    for(i=0; i<games.length; i++){
+        for(c=0; c<games[i].gameConsole.length; c++){
+            if(games[i].gameConsole[c].title.toString().toLowerCase()==name.toString().toLowerCase() & !result.includes(games[i])) result.push(games[i]);
+        }
+        for(c=0; c<games[i].gameConsole.length; c++){
+            if(games[i].gameConsole[c].title.toLowerCase().includes(name.toLowerCase()) & !result.includes(games[i])) result.push(games[i]);
+        }
+
+    }
+    //search term includes name
+    for(i=0; i<games.length; i++){
+        if(name.toLowerCase().includes(games[i].title.toLowerCase()) & !result.includes(games[i])) result.push(games[i]);
     }
     return result
 }
@@ -561,13 +581,14 @@ function getGamesConsole(gameConsoleId){
     return result;
 }
 
+//View a game on the game page
 function viewGame(game){
     localStorage.setItem("SelectedGame",game)
     window.location.href = "game.html"
 }
-
+//Add the game to be fully displayed on the current page
 function addGame(){
-    game=getGame([localStorage.getItem("SelectedGame")]);
+    game=getGame(localStorage.getItem("SelectedGame"));
     uReviews=populateUserReviews();
     htmlContent = ""
 
@@ -628,6 +649,7 @@ function addGame(){
 
 }
 
+//Go through each console and display it on the page
 function displayPlatforms(){
     consoles = populateGameConsoles();
     for (i = 0; i<consoles.length; i++){
@@ -635,6 +657,7 @@ function displayPlatforms(){
     }
 }
 
+//Get the average review for a game
 function getAverageReview(game){
     reviewCount = 0;
     reviewAverage = 0;
@@ -648,7 +671,8 @@ function getAverageReview(game){
     return reviewAverage;
 }
 
-function getConsole(game){
+
+function getConsoleStr(game){
     consoleToStr = ""
     consoleToStr += game.gameConsole[0].title;
     for (c=1; c<game.gameConsole.length; c++){
@@ -659,8 +683,14 @@ function getConsole(game){
 }
 
 function displayGame(){
-    games = populateGames()
-    htmlContent = ""
+    if(localStorage.getItem("searchTerm").length>0){
+        games = getGamesName(localStorage.getItem("searchTerm"))
+        document.getElementById("searchBox").value=localStorage.getItem("searchTerm");
+    }
+    else{
+         games = populateGames()
+        }
+    htmlContent = "";
     //htmlContent +="<div id=img-gallery class = container>"
     for(i=0; i<games.length;){
         htmlContent += "<div class = row>"
@@ -670,7 +700,7 @@ function displayGame(){
                 gameImgLink = gameImgLink.replace(":","")
                 htmlContent += "<div class = col-sm> <div class = displayGames id = gameImgLink><button id = gameButton onclick=viewGame(games["+i+"].title)> <img id=allgames src=images/games/"+gameImgLink+".jpg width=100px>";
                 htmlContent += "<h6>"+games[i].title+"</h6>"
-                htmlContent += "<p>"+getConsole(games[i])+"</p>"
+                htmlContent += "<p>"+getConsoleStr(games[i])+"</p>"
                 htmlContent += "<p>Release Date: "+games[i].year+
                     "</p><p>Genre: "+games[i].genre+
                     "</p><p>Review Average: "+Math.round(getAverageReview(games[i])*100)/100+"</p></button></div></div>";
@@ -682,115 +712,8 @@ function displayGame(){
         htmlContent += "</div>"
     }
     //htmlContent += "</div>"
-    document.getElementById("gameDescription").innerHTML += htmlContent
+    document.getElementById("gameDescription").innerHTML = htmlContent
 }
-
-function populateConsoleFilter(){
-    games = populateGames()
-    gameconsole = [];
-    htmlContent = ""
-    consoles = populateGameConsoles();
-    for (i = 0; i<consoles.length; i++){
-        gameconsole[i] = gameConsoles[i].title   
-    }
-    htmlContent += "<option value=All>All</option>";
-    //console.log("gameconsole array: "+gameconsole)
-    for(i=0; i<gameconsole.length;){
-        consoleLink = gameconsole[i].split(" ").join("")
-        consoleLink = consoleLink.replace(":","") 
-        htmlContent+= "<option value="+consoleLink+">"+gameconsole[i]+"</option>";
-        console.log(consoleLink)
-        //console.log("console title: "+gameconsole[i])
-        i++;
-        
-    }
-    document.getElementById("console").innerHTML += htmlContent;
-}
-
-/*
-function applyFilters(){
-    console.log("found function applyFilters")
-    const selectedValue = document.getElementById("console").value;
-    console.log(selectedValue)
-    const items = document.querySelectorAll(".displayGames");
-
-    items.forEach(item => {
-        console.log(getGamesConsole(item))
-        if (selectedValue === "All") {
-            item.classList.remove("hidden");
-        } else {
-            item.id === selectedValue ? 
-        }
-    });
-}
-*/
-
-
-
-
-function applyFilters(){
-    games = populateGames()
-    const selectedValue = document.getElementById("console").value;
-    const items = document.querySelectorAll(".displayGames");
-    const col = document.querySelectorAll(".col-sm")
-    const row = document.querySelectorAll(".row")
-    htmlContent = ""
-    for(i=0; i<games.length; i++){
-        console.log("first loop")
-        console.log("Game: ",games[i])
-        console.log(games[i].gameConsole)
-        for(c=0;c<games[i].gameConsole.length;c++){
-            console.log("second loop")
-            conName = games[i].gameConsole[c].title.split(" ").join("").replace(":","")
-            console.log(selectedValue)
-            console.log(conName)
-            if(conName == selectedValue){ 
-                console.log("Displays to screen")
-                console.log(games[i])
-                htmlContent = displayGame()  
-                
-            }
-        }
-        
-    }
-
-}
-
-// NOTE FOR SELF (KIERAN)
-
-/*
-Steps for making filters
-
-Redo displayGame() into 2 functions
-First function will display rows and cols
-Second will input the data 
-
-*/
-
-
-
-
-/*
-    items.forEach(item => {
-        if (selectedValue === "All"){
-            item.classList.remove("hidden");
-        } else {
-            item.classList.add("hidden");
-            col[g].style.display = "none"
-            row[g].style.display = "none"
-            for(c=0;c<games[g].gameConsole.length;c++){
-                conName = games[g].gameConsole[c].title.split(" ").join("").replace(":","")
-                if(conName == selectedValue){
-                    item.classList.remove("hidden")
-                    col[g].style.display = ""
-                    row[g].style.display = ""
-                    
-            }
-        }
-        g++
-        }
-    });
-*/
 
 /* Login Page Scripts */
 
@@ -811,3 +734,10 @@ function loginFunctionality() {
       }
     });
   }
+
+// Get games based on a search term
+function searchGame(){
+    term= document.getElementById("searchBox").value;
+    localStorage.setItem("searchTerm", term);
+    displayGame();
+}

@@ -16,10 +16,11 @@
                 <li>Genres</li>
                 <li>Platforms</li>
                 <li><a href="login.html">Log in</a></li>
-                <li><a href ="all_games.html">All Games</a></li>
+                <li><a href ="all_games.html"onclick="localStorage.setItem('searchTerm','')">All Games</a></li>
                 <li>
-                    <form id="search">
+                    <form id="search" action="all_games.html">
                         <textarea id="searchBox" rows="1" placeholder="search"></textarea>
+                        <button type="submit" onclick="searchGame()">Search</button>
                     </form>
                 </li>
             </ul>
